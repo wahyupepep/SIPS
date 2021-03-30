@@ -42,9 +42,8 @@
                                         <label for="no_surat">No. Surat</label>
                                     </div>
                                     <div class="col-md-10">
-                                        <input type="text" class="form-control"
-                                            id="no_surat" name="no_surat" value="{{ old('no_surat', $letter->no_surat) }}"
-                                            autocomplete="off">
+                                        <input type="text" class="form-control" id="no_surat" name="no_surat"
+                                            value="{{ old('no_surat', $letter->no_surat) }}" autocomplete="off">
                                     </div>
                                 </div>
                             </div>
@@ -54,9 +53,8 @@
                                         <label for="tgl_surat">Tanggal Surat</label>
                                     </div>
                                     <div class="col-md-10">
-                                        <input type="date" class="form-control"
-                                            id="tgl_surat" name="tgl_surat" value="{{ old('tgl_surat', $letter->tgl_surat) }}"
-                                            autocomplete="off">
+                                        <input type="date" class="form-control" id="tgl_surat" name="tgl_surat"
+                                            value="{{ old('tgl_surat', $letter->tgl_surat) }}" autocomplete="off">
                                     </div>
                                 </div>
                             </div>
@@ -66,9 +64,8 @@
                                         <label for="asal">Asal Surat</label>
                                     </div>
                                     <div class="col-md-10">
-                                        <input type="text" class="form-control"
-                                            id="asal" name="asal" value="{{ old('asal', $letter->asal) }}"
-                                            autocomplete="off">
+                                        <input type="text" class="form-control" id="asal" name="asal"
+                                            value="{{ old('asal', $letter->asal) }}" autocomplete="off">
                                     </div>
                                 </div>
                             </div>
@@ -79,23 +76,27 @@
                                     </div>
                                     <div class="col-md-10">
                                         <div class="form-check form-check-inline">
-                                            <input class="form-check-input" type="radio" name="perselisihan" id="inlineRadio1"
-                                                value="Hak" {{ $letter->perselisihan == 'Hak' ? 'checked':'' }}>
+                                            <input class="form-check-input" type="radio" name="perselisihan"
+                                                id="inlineRadio1" value="Hak"
+                                                {{ $letter->perselisihan == 'Hak' ? 'checked' : '' }}>
                                             <label class="form-check-label" for="inlineRadio1">Hak</label>
                                         </div>
                                         <div class="form-check form-check-inline">
-                                            <input class="form-check-input" type="radio" name="perselisihan" id="inlineRadio2"
-                                                value="Kepentingan" {{ $letter->perselisihan == 'Kepentingan' ? 'checked':'' }}>
+                                            <input class="form-check-input" type="radio" name="perselisihan"
+                                                id="inlineRadio2" value="Kepentingan"
+                                                {{ $letter->perselisihan == 'Kepentingan' ? 'checked' : '' }}>
                                             <label class="form-check-label" for="inlineRadio2">Kepentingan</label>
                                         </div>
                                         <div class="form-check form-check-inline">
-                                            <input class="form-check-input" type="radio" name="perselisihan" id="inlineRadio2"
-                                                value="PHK" {{ $letter->perselisihan == 'PHK' ? 'checked':'' }}>
+                                            <input class="form-check-input" type="radio" name="perselisihan"
+                                                id="inlineRadio2" value="PHK"
+                                                {{ $letter->perselisihan == 'PHK' ? 'checked' : '' }}>
                                             <label class="form-check-label" for="inlineRadio2">PHK</label>
                                         </div>
                                         <div class="form-check form-check-inline">
-                                            <input class="form-check-input" type="radio" name="perselisihan" id="inlineRadio2"
-                                                value="SP/SB" {{ $letter->perselisihan == 'SP/SB' ? 'checked':'' }}>
+                                            <input class="form-check-input" type="radio" name="perselisihan"
+                                                id="inlineRadio2" value="SP/SB"
+                                                {{ $letter->perselisihan == 'SP/SB' ? 'checked' : '' }}>
                                             <label class="form-check-label" for="inlineRadio2">SP/SB</label>
                                         </div>
                                     </div>
@@ -107,24 +108,26 @@
                                         <label for="isi">Deskripsi Singkat</label>
                                     </div>
                                     <div class="col-md-10">
-                                        <textarea type="text" class="form-control"
-                                        id="isi" name="isi" autocomplete="off">
-                                        {{ old('isi', $letter->isi) }}
-                                        </textarea>
+                                        <textarea type="text" class="form-control" id="isi" name="isi" autocomplete="off">
+                                            {{ old('isi', $letter->isi) }}
+                                            </textarea>
                                     </div>
                                 </div>
                             </div>
                             <div class="form-group">
                                 <div class="row">
                                     <div class="col-md-2">
-                                        <label for="image">Upload</label>
+                                        <label for="image">Upload Foto</label>
                                     </div>
-                                    <div class="col-md-10"> 
-                                        <input type="file" class="form-control-file" id="image" name="image">
+                                    <div class="col-md-10">
+                                        @if ($letter->image)
+                                            <img id="original" src="{{ url('storage/' . $letter->image) }}" width="400">
+                                        @endif
+                                        <input type="file" class="form-control-file" id="image" name="image" value="{{ $letter->image }}">
                                     </div>
                                 </div>
                             </div>
-                            
+
                             <div class="d-flex justify-content-center">
                                 <button type="submit" class="btn btn-primary mt-3 ">Submit</button>
                             </div>

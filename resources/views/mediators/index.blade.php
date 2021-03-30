@@ -40,26 +40,27 @@
                                         <th>Nama</th>
                                         <th>nip</th>
                                         <th>email</th>
-                                        <th>Actions</th>
                                     </tr>
                                 </thead>
                                 <tbody>
-                                    <tr>
-                                        <td class="text-center"></td>
-                                        <td class="text-center"></td>
-                                        <td class="text-center"></td>
-                                        <td class="text-center"></td>
-                                        <td class="text-center">
-                                            <a href="" class="badge badge-warning">Ubah
-                                            </a>
-                                            <a href="" class="badge badge-danger">Hapus
-                                            </a>
-                                        </td>
-                                    </tr>
+                                    @foreach ($users as $no => $user)
+                                        <tr>
+                                            <td class="text-center">{{ $users->firstItem() + $no }}</td>
+                                            <td class="text-center">{{ $user->name }}</td>
+                                            <td class="text-center">{{ $user->nip }}</td>
+                                            <td class="text-center">{{ $user->email }}</td>
+                                            {{-- <td class="text-center">
+                                                <a href="{{ route('user.detail', $user) }}"
+                                                    class="badge badge-info">Detail
+                                                </a>
+                                            </td> --}}
+                                        </tr>
+                                    @endforeach
                                 </tbody>
                             </table>
                         </div>
                         <div class="float-right mt-3">
+                            {{ $users->links() }}
                         </div>
                     </div>
                     <!-- /.card-body -->

@@ -2,7 +2,10 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\User;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
+
 
 class MediatorController extends Controller
 {
@@ -13,7 +16,8 @@ class MediatorController extends Controller
      */
     public function index()
     {
-        return view('mediators.index');
+        $users = User::simplePaginate(10);
+        return view('mediators.index', compact('users'));
     }
 
     /**

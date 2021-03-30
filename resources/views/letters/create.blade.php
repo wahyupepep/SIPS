@@ -116,7 +116,7 @@
                             <div class="form-group">
                                 <div class="row">
                                     <div class="col-md-2">
-                                        <label for="image">Upload</label>
+                                        <label for="image">Upload Foto</label>
                                     </div>
                                     <div class="col-md-10">
                                         <input type="file" class="form-control-file" id="image" name="image">

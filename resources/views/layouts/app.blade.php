@@ -78,12 +78,12 @@
         </div>
 
         <!-- Main Footer -->
-        <footer class="main-footer text-white">
+        {{-- <footer class="main-footer text-white">
             <div class="float-right d-none d-sm-block">
                 <b>Dinas Tenaga Kerja Dan Transmigrasi Jateng</b>
             </div>
             <strong>Copyright &copy; 2021
-        </footer>
+        </footer> --}}
     </div>
 
     <script src="{{ mix('js/app.js') }}" defer></script>

@@ -17,7 +17,7 @@ class LetterController extends Controller
      */
     public function index()
     {
-        $letters = Letter::simplePaginate(3);
+        $letters = Letter::simplePaginate(10);
         return view('letters.index', ['letters' => $letters]);
     }
 
@@ -135,7 +135,7 @@ class LetterController extends Controller
             'tgl_surat' => request('tgl_surat'),
             'asal' => request('asal'),
             'perselisihan' => request('perselisihan'),
-            'isi' => request('perselisihan'),
+            'isi' => request('isi'),
             'image' => $image,
         ]);
             // dd($imgName);

@@ -86,10 +86,10 @@
                         <div class="form-group">
                             <div class="row">
                                 <div class="col-md-2">
-                                    <label>File</label>
+                                    <label>Foto</label>
                                 </div>
                                 <div class="col-md-10">
-                                    <img src="{{asset('storage/' . $letter->image) }}">
+                                    :<img src="{{asset('storage/' . $letter->image) }}" width="500">
                                     {{-- <img src="{{ Storage::url("/storage/app/{$letter->image}") }}" alt="{{ $letter->image }}" /> --}}
                                 </div>
                             </div>

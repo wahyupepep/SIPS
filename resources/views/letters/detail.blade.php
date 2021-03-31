@@ -89,7 +89,7 @@
                                     <label>Foto</label>
                                 </div>
                                 <div class="col-md-10">
-                                    :<img src="{{asset('storage/' . $letter->image) }}" width="500">
+                                    :<img src="{{asset('storage/' . $letter->image) }}" width="400">
                                     {{-- <img src="{{ Storage::url("/storage/app/{$letter->image}") }}" alt="{{ $letter->image }}" /> --}}
                                 </div>
                             </div>

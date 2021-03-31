@@ -127,7 +127,7 @@ class LetterController extends Controller
         } elseif ($letter->image) {
             $upload = $letter->image;
         } else {
-            $letter = null;
+            $image = null;
         }
 
         $letter->update([

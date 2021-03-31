@@ -2,12 +2,10 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\User;
+use App\Models\Progress;
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Auth;
 
-
-class MediatorController extends Controller
+class ProgressController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -16,8 +14,8 @@ class MediatorController extends Controller
      */
     public function index()
     {
-        $users = User::simplePaginate(8);
-        return view('mediators.index', compact('users'));
+        $progresses = Progress::simplePaginate(10);
+        return view('progresses.index', ['progresses' => $progresses]);
     }
 
     /**

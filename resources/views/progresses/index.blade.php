@@ -3,12 +3,12 @@
     <div class="content-header">
         <div class="row">
             <div class="col-md-6">
-                <h4>Mediator</h4>
+                <h4>Progress</h4>
             </div>
             <div class="col-md-6">
                 <ol class="breadcrumb float-sm-right">
                     <li class="breadcrumb-item"><a href="{{ route('home') }}">Home</a></li>
-                    <li class="breadcrumb-item active">Mediator</li>
+                    <li class="breadcrumb-item active">Progress</li>
                 </ol>
             </div>
         </div>
@@ -23,7 +23,7 @@
                     <div class="card-header">
                         <div class="row">
                             <div class="col-md-6 col-6 my-auto">
-                                <h3 class="card-title">Data Mediator</h3>
+                                <h3 class="card-title">Data Progress</h3>
                             </div>
                         </div>
                     </div>
@@ -33,30 +33,30 @@
                                 <thead class="text-center thead-dark">
                                     <tr>
                                         <th>No</th>
-                                        <th>Nama</th>
-                                        <th>nip</th>
-                                        <th>email</th>
+                                        <th>No. Surat</th>
+                                        <th>Status</th>
+                                        <th>Keterangan</th>
                                     </tr>
                                 </thead>
                                 <tbody>
-                                    @foreach ($users as $no => $user)
+                                    @foreach ($progresses as $no => $progress)
                                         <tr>
-                                            <td>{{ $users->firstItem() + $no }}</td>
-                                            <td>{{ $user->name }}</td>
-                                            <td>{{ $user->nip }}</td>
-                                            <td>{{ $user->email }}</td>
-                                            {{-- <td class="text-center">
-                                                <a href="{{ route('user.detail', $user) }}"
-                                                    class="badge badge-info">Detail
+                                            <td>{{ $progresses->firstItem() + $no }}</td>
+                                            <td>{{ $progress->no_surat }}</td>
+                                            <td>{{ $progress->status }}</td>
+                                            <td>{{ $progress->keterangan }}</td>
+                                            <td class="text-center">
+                                                <a href=""
+                                                    class="badge badge-success">Update
                                                 </a>
-                                            </td> --}}
+                                            </td>
                                         </tr>
                                     @endforeach
                                 </tbody>
                             </table>
                         </div>
                         <div class="float-right mt-3">
-                            {{ $users->links() }}
+                            {{ $progresses->links() }}
                         </div>
                     </div>
                     <!-- /.card-body -->

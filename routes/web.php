@@ -1,7 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\{LetterController,HomeController,MediatorController};
+use App\Http\Controllers\{LetterController,HomeController,MediatorController,ProgressController};
 use Illuminate\Support\Facades\Auth;
 
 /*
@@ -44,6 +44,14 @@ Route::group([
     'midleware' => 'auth'
 ], function () {
     Route::get('/', [MediatorController::class, 'index']);      
+});
+
+Route::group([
+    'prefix' => 'progress',
+    'as' => 'progress',
+    'midleware' => 'auth'
+], function () {
+    Route::get('/', [ProgressController::class, 'index']);      
 });
 
 

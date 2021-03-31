@@ -25,10 +25,6 @@
                             <div class="col-md-6 col-6 my-auto">
                                 <h3 class="card-title">Data Mediator</h3>
                             </div>
-                            <div class="col-md-6 col-6">
-                                <a href="" class="btn btn-primary btn-sm float-right"><i
-                                        class="fas fa-fw fa-plus mr-1"></i>Tambah</a>
-                            </div>
                         </div>
                     </div>
                     <div class="card-body">

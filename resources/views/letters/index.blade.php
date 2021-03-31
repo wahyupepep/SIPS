@@ -49,7 +49,7 @@
                                             <td class="text-center">{{ $letters->firstItem() + $no }}</td>
                                             <td class="text-center">{{ $letter->no_surat }}</td>
                                             <td class="text-center">{{ $letter->tgl_surat }}</td>
-                                            <td class="text-center">{{ $letter->isi }}</td>
+                                            <td>{{ $letter->isi }}</td>
                                             <td class="text-center">
                                                 <a href="{{ route('letter.detail', $letter) }}"
                                                     class="badge badge-info">Detail

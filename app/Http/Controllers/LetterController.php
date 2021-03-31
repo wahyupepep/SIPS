@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Letter;
+use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
@@ -17,8 +18,9 @@ class LetterController extends Controller
      */
     public function index()
     {
-        $letters = Letter::simplePaginate(10);
-        return view('letters.index', ['letters' => $letters]);
+        $letters = Letter::with('user')->simplePaginate(10);
+        return $letters;
+        // return view('letters.index', ['letters' => $letters]);
     }
 
     /**

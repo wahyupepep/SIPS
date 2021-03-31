@@ -17,4 +17,17 @@ class Letter extends Model
         'image',
         'users_id'
     ];
+
+    //relasi user
+    public function user()
+    {
+        return $this->belongsTo(User::class);
+    }
+
+    //relasi progress
+    public function progresses()
+    {
+        return $this->hasMany(Progress::class);
+    }
+
 }

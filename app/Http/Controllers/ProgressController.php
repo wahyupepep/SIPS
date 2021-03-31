@@ -14,7 +14,9 @@ class ProgressController extends Controller
      */
     public function index()
     {
-        $progresses = Progress::simplePaginate(10);
+        $progresses = Progress::with('letter')->simplePaginate(10);
+        // dd($progresses);
+        return $progresses;
         return view('progresses.index', ['progresses' => $progresses]);
     }
 

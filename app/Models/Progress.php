@@ -14,4 +14,9 @@ class Progress extends Model
         'status',
         'keterangan'
     ];
+
+    public function letter()
+    {
+        return $this->belongsTo(Letter::class);
+    }
 }

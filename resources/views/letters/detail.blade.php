@@ -33,73 +33,45 @@
                         </div>
                     </div>
                     <div class="card-body">
-                        <div class="form-group">
-                            <div class="row">
-                                <div class="col-md-2">
-                                    <label>No. Surat</label>
-                                </div>
-                                <div class="col-md-10">
-                                    : {{ $letter->no_surat }}
-                                </div>
-                            </div>
-                        </div>
-                        <div class="form-group">
-                            <div class="row">
-                                <div class="col-md-2">
-                                    <label>Tanggal Surat</label>
-                                </div>
-                                <div class="col-md-10">
-                                    <p>: {{ $letter->tgl_surat }}</p>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="form-group">
-                            <div class="row">
-                                <div class="col-md-2">
-                                    <label>Asal</label>
-                                </div>
-                                <div class="col-md-10">
-                                    <p>: {{ $letter->asal }}</p>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="form-group">
-                            <div class="row">
-                                <div class="col-md-2">
-                                    <label>Perselisihan</label>
-                                </div>
-                                <div class="col-md-10">
-                                    <p>: {{ $letter->perselisihan }}</p>
+                        <div class="row">
+                            <div class="col-md-8">
+
+                                <div class="form-group">
+                                    <div class="row">
+                                        <div class="col-md-12">
+                                            <label class="form-label">No. Surat</label>
+                                            <input type="text" class="form-control-plaintext border-0" readonly value="{{ $letter->no_surat }}">                                            
+                                        </div>
+                                        <div class="col-md-12">
+                                            <label class="form-label">Tanggal Surat</label>
+                                            <input type="text" class="form-control-plaintext border-0" readonly value="{{ $letter->tgl_surat }}">                                            
+                                        </div>
+                                        <div class="col-md-12">
+                                            <label class="form-label">Asal</label>
+                                            <input type="text" class="form-control-plaintext border-0" readonly value="{{ $letter->asal }}">                                            
+                                        </div>
+                                        <div class="col-md-12">
+                                            <label class="form-label">Perselisihan</label>
+                                            <input type="text" class="form-control-plaintext border-0" readonly value="{{ $letter->perselisihan }}">                                            
+                                        </div>
+                                        <div class="col-md-12">
+                                            <label class="form-label">Deskripsi Singkat</label>
+                                            <input type="text" class="form-control-plaintext border-0" readonly value="{{ $letter->isi }}">                                            
+                                        </div>
+                                    </div>                                   
                                 </div>
                             </div>
-                        </div>
-                        <div class="form-group">
-                            <div class="row">
-                                <div class="col-md-2">
-                                    <label>Deskripsi Singkat</label>
-                                </div>
-                                <div class="col-md-10">
-                                    <p>: {{ $letter->isi }}</p>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="form-group">
-                            <div class="row">
-                                <div class="col-md-2">
-                                    <label>Foto</label>
-                                </div>
-                                <div class="col-md-10">
-                                    :<img src="{{asset('storage/' . $letter->image) }}" width="400">
-                                    {{-- <img src="{{ Storage::url("/storage/app/{$letter->image}") }}" alt="{{ $letter->image }}" /> --}}
-                                </div>
+                            <div class="col-md-4">
+                                <img class="w-100" src="{{ asset('storage/' . $letter->image) }}">
                             </div>
                         </div>
 
+
                         <div class="row justify-content-center">
-                            <a href="{{ route('letter.edit', $letter)}}" class="btn bg-gradient-warning"><i
-                                class="fas fa-pen mr-1"></i>Ubah</a>
-                            <a href="{{ route('letter.delete', $letter)}}" class="btn bg-gradient-danger ml-1"><i
-                                class="fas fa-trash mr-1"></i>Hapus</a>
+                            <a href="{{ route('letter.edit', $letter) }}" class="btn bg-gradient-warning"><i
+                                    class="fas fa-pen mr-1"></i>Ubah</a>
+                            <a href="{{ route('letter.delete', $letter) }}" class="btn bg-gradient-danger ml-1"><i
+                                    class="fas fa-trash mr-1"></i>Hapus</a>
                         </div>
                     </div>
                     <!-- /.card-body -->

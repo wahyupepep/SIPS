@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Letter;
+use App\Models\Progress;
 use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -18,9 +19,8 @@ class LetterController extends Controller
      */
     public function index()
     {
-        $letters = Letter::with('user')->simplePaginate(10);
-        return $letters;
-        // return view('letters.index', ['letters' => $letters]);
+        $letters = Letter::with('progresses')->simplePaginate(10);
+        return view('letters.index', ['letters' => $letters]);
     }
 
     /**
@@ -64,14 +64,18 @@ class LetterController extends Controller
             $store = null;
         }
 
-        Letter::create([
+        $letter = Letter::create([
             'no_surat' => $request->no_surat,
             'tgl_surat' => $request->tgl_surat,
             'asal' => $request->asal,
             'perselisihan' => $request->perselisihan,
             'isi' => $request->isi,
             'image' => $store,
-            'users_id' => $user
+            'user_id' => $user
+        ]);
+
+        Progress::create([
+            'letter_id' => $letter->id
         ]);
 
         session()->flash('success', 'Data Berhasil Ditambahkan');
@@ -122,14 +126,13 @@ class LetterController extends Controller
             'isi' => 'required',
             'image' => request('image') ? 'nullable|mimes:pdf,jpg,jpeg' : '',
         ]);
+        $image = null;
         if ($request->image) {
             $imgName = $request->file('image')->getClientOriginalName();
             Storage::delete($letter->image);
             $image = $request->file('image')->storeAs('files/letter', $imgName);
         } elseif ($letter->image) {
-            $upload = $letter->image;
-        } else {
-            $image = null;
+            $image = $letter->image;
         }
 
         $letter->update([

@@ -15,7 +15,7 @@ class Letter extends Model
         'perselisihan',
         'isi',
         'image',
-        'users_id'
+        'user_id'
     ];
 
     //relasi user

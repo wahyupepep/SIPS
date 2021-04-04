@@ -41,7 +41,7 @@
                                 <tbody>
                                     @foreach ($users as $no => $user)
                                         <tr>
-                                            <td>{{ $users->firstItem() + $no }}</td>
+                                            <td class="text-center">{{ $users->firstItem() + $no }}</td>
                                             <td>{{ $user->name }}</td>
                                             <td>{{ $user->nip }}</td>
                                             <td>{{ $user->email }}</td>

@@ -42,7 +42,7 @@
                                 <tbody>
                                     @foreach ($progresses as $no => $progress)
                                         <tr>
-                                            <td>{{ $progresses->firstItem() + $no }}</td>
+                                            <td class="text-center">{{ $progresses->firstItem() + $no }}</td>
                                             <td>{{ $progress->no_surat }}</td>
                                             <td>{{ $progress->status }}</td>
                                             <td>{{ $progress->keterangan }}</td>

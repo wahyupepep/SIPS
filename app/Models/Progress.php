@@ -10,7 +10,7 @@ class Progress extends Model
     use HasFactory;
     protected $table = "progress";
     protected $fillable =[
-        'letters_id',
+        'letter_id',
         'status',
         'keterangan'
     ];

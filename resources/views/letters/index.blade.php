@@ -40,6 +40,7 @@
                                         <th>No. Surat</th>
                                         <th>Tanggal Surat</th>
                                         <th>Deskripsi Singkat</th>
+                                        <th>Status</th>
                                         <th>Actions</th>
                                     </tr>
                                 </thead>
@@ -50,10 +51,24 @@
                                             <td class="text-center">{{ $letter->no_surat }}</td>
                                             <td class="text-center">{{ $letter->tgl_surat }}</td>
                                             <td>{{ $letter->isi }}</td>
+                                            <td>{{ $letter->progresses[sizeof($letter->progresses)-1]['status'] }}</td>
                                             <td class="text-center">
-                                                <a href="{{ route('letter.detail', $letter) }}"
-                                                    class="badge badge-info">Detail
-                                                </a>
+                                                <div class="btn-group">
+                                                    <a href="{{ route('letter.detail', $letter) }}"
+                                                        class="btn btn-outline-info btn-sm "
+                                                        data-bs-toggle="tooltip" 
+                                                        data-bs-placement="top" 
+                                                        title="Detail Surat">
+                                                        <i class="fas fa-clipboard-list"></i>
+                                                    </a>
+                                                    <a href="{{ route('letter.detail', $letter) }}"
+                                                        class="btn btn-outline-warning btn-sm "
+                                                        data-bs-toggle="tooltip" 
+                                                        data-bs-placement="top" 
+                                                        title="Update Progress">
+                                                        <i class="fas fa-edit"></i>
+                                                    </a>
+                                                </div>
                                             </td>
                                         </tr>
                                     @endforeach

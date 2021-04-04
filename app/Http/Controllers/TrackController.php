@@ -2,10 +2,10 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Progress;
+use Facade\FlareClient\View;
 use Illuminate\Http\Request;
 
-class ProgressController extends Controller
+class TrackController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -14,8 +14,7 @@ class ProgressController extends Controller
      */
     public function index()
     {
-        $progresses = Progress::with('letter')->simplePaginate(10);
-        return view('progresses.index', ['progresses' => $progresses]);
+        return view('tracks.index');
     }
 
     /**

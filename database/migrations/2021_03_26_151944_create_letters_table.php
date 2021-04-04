@@ -21,10 +21,10 @@ class CreateLettersTable extends Migration
             $table->enum('perselisihan',['Hak','Kepentingan','PHK','SP/SB']);
             $table->string('isi');
             $table->string('image')->nullable();
-            $table->foreignId('users_id')->unsigned();
+            $table->foreignId('user_id')->unsigned();
             $table->timestamps();
 
-            $table->foreign('users_id')->references('id')->on('users')->onDelete('cascade');
+            $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
 
         });
     }

@@ -1,7 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\{LetterController,HomeController,MediatorController,ProgressController};
+use App\Http\Controllers\{LetterController,HomeController,MediatorController,ProgressController,TrackController};
 use Illuminate\Support\Facades\Auth;
 
 /*
@@ -16,7 +16,7 @@ use Illuminate\Support\Facades\Auth;
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('auth.login');
 });
 Auth::routes();
 
@@ -52,6 +52,14 @@ Route::group([
     'midleware' => 'auth'
 ], function () {
     Route::get('/', [ProgressController::class, 'index']);      
+});
+
+Route::group([
+    'prefix' => 'track',
+    'as' => 'track',
+    'midleware' => 'auth'
+], function () {
+    Route::get('/', [TrackController::class, 'index']);      
 });
 
 

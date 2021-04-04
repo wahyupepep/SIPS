@@ -15,12 +15,12 @@ class CreateProgressTable extends Migration
     {
         Schema::create('progress', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('letters_id')->unsigned();
-            $table->enum('status',['Pelajari','Klarifikasi','Mediasi','PB','Anjuran']);
+            $table->foreignId('letter_id')->unsigned();
+            $table->enum('status',['Pelajari','Klarifikasi','Mediasi','PB','Anjuran'])->default('Pelajari');
             $table->string('keterangan')->nullable();
             $table->timestamps();
 
-            $table->foreign('letters_id')->references('id')->on('letters')->onDelete('cascade');
+            $table->foreign('letter_id')->references('id')->on('letters')->onDelete('cascade');
         });
     }
 

@@ -12,12 +12,6 @@
     </a>
 </li>
 <li class="nav-item">
-    <a href="{{ route('progress') }}" class="nav-link">
-        <i class="nav-icon fas fa-clipboard-list"></i>
-        <p>Progress</p>
-    </a>
-</li>
-<li class="nav-item">
     <a href="{{ route('mediator') }}" class="nav-link">
         <i class="nav-icon fas fa-users"></i>
         <p>Mediator</p>

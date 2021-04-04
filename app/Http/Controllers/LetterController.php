@@ -161,4 +161,5 @@ class LetterController extends Controller
         // dd($letter);
         return redirect()->route('letter')->with('delete', 'File berhasil dihapus!');
     }
+
 }

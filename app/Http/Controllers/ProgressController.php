@@ -47,7 +47,8 @@ class ProgressController extends Controller
      */
     public function show($id)
     {
-        //
+        $progress = Progress::find($id);
+        return view('letters.status', compact('progress'));
     }
 
     /**
@@ -70,7 +71,16 @@ class ProgressController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $progress = Progress::find($id);
+
+        $this->validate($request, [
+            'keterangan' => 'required',
+        ]);
+
+        $progress->update([
+            'keterangan' => request('keterangan'),
+        ]);
+        return redirect()->route('letter.detail', $progress->letter->id)->with('success', 'Data Berhasil Diubah!');
     }
 
     /**

@@ -34,44 +34,60 @@
                     </div>
                     <div class="card-body">
                         <div class="row">
-                            <div class="col-md-8">
-
+                            <div class="col-md-6">
                                 <div class="form-group">
                                     <div class="row">
                                         <div class="col-md-12">
                                             <label class="form-label">No. Surat</label>
-                                            <input type="text" class="form-control-plaintext border-0" readonly value="{{ $letter->no_surat }}">                                            
+                                            <input type="text" class="form-control-plaintext border-0" readonly
+                                                value="{{ $letter->no_surat }}">
                                         </div>
                                         <div class="col-md-12">
                                             <label class="form-label">Tanggal Surat</label>
-                                            <input type="text" class="form-control-plaintext border-0" readonly value="{{ $letter->tgl_surat }}">                                            
+                                            <input type="text" class="form-control-plaintext border-0" readonly
+                                                value="{{ $letter->tgl_surat }}">
                                         </div>
                                         <div class="col-md-12">
                                             <label class="form-label">Asal</label>
-                                            <input type="text" class="form-control-plaintext border-0" readonly value="{{ $letter->asal }}">                                            
+                                            <input type="text" class="form-control-plaintext border-0" readonly
+                                                value="{{ $letter->asal }}">
                                         </div>
                                         <div class="col-md-12">
                                             <label class="form-label">Perselisihan</label>
-                                            <input type="text" class="form-control-plaintext border-0" readonly value="{{ $letter->perselisihan }}">                                            
+                                            <input type="text" class="form-control-plaintext border-0" readonly
+                                                value="{{ $letter->perselisihan }}">
                                         </div>
                                         <div class="col-md-12">
                                             <label class="form-label">Deskripsi Singkat</label>
-                                            <input type="text" class="form-control-plaintext border-0" readonly value="{{ $letter->isi }}">                                            
+                                            <input type="text" class="form-control-plaintext border-0" readonly
+                                                value="{{ $letter->isi }}">
                                         </div>
-                                    </div>                                   
+                                    </div>
+                                </div>
+                                <img class="w-100" src="{{ asset('storage/' . $letter->image) }}">
+                                <div class="row justify-content-center">
+                                    <a href="{{ route('letter.edit', $letter) }}" class="btn bg-gradient-warning btn-sm"><i
+                                            class="fas fa-pen mr-1"></i>Ubah</a>
+                                    <a href="{{ route('letter.delete', $letter) }}" class="btn bg-gradient-danger btn-sm ml-1"><i
+                                            class="fas fa-trash mr-1"></i>Hapus</a>
                                 </div>
                             </div>
-                            <div class="col-md-4">
-                                <img class="w-100" src="{{ asset('storage/' . $letter->image) }}">
+                            <div class="col-md-6">
+                                <ul class="list-group">
+                                    @foreach ($letter->progresses as $progress)
+                                        <li
+                                            class="list-group-item list-group-item-action d-flex justify-content-between align-items-center">
+                                            <div>
+                                                <div class="font-weight-bold">{{ $progress['status'] }}</div>
+                                                {{ $progress['keterangan'] }}
+                                            </div>
+                                            <a href="{{ route('progress.show', $progress) }}" class="btn btn-primary btn-sm">
+                                                <i class="fas fa-edit"></i>
+                                            </a>
+                                        </li>
+                                    @endforeach
+                                </ul>
                             </div>
-                        </div>
-
-
-                        <div class="row justify-content-center">
-                            <a href="{{ route('letter.edit', $letter) }}" class="btn bg-gradient-warning"><i
-                                    class="fas fa-pen mr-1"></i>Ubah</a>
-                            <a href="{{ route('letter.delete', $letter) }}" class="btn bg-gradient-danger ml-1"><i
-                                    class="fas fa-trash mr-1"></i>Hapus</a>
                         </div>
                     </div>
                     <!-- /.card-body -->

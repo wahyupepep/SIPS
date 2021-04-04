@@ -51,24 +51,13 @@
                                             <td class="text-center">{{ $letter->no_surat }}</td>
                                             <td class="text-center">{{ $letter->tgl_surat }}</td>
                                             <td>{{ $letter->isi }}</td>
-                                            <td>{{ $letter->progresses[sizeof($letter->progresses)-1]['status'] }}</td>
+                                            <td>{{ $letter->progresses[sizeof($letter->progresses) - 1]['status'] }}</td>
                                             <td class="text-center">
-                                                <div class="btn-group">
-                                                    <a href="{{ route('letter.detail', $letter) }}"
-                                                        class="btn btn-outline-info btn-sm "
-                                                        data-bs-toggle="tooltip" 
-                                                        data-bs-placement="top" 
-                                                        title="Detail Surat">
-                                                        <i class="fas fa-clipboard-list"></i>
-                                                    </a>
-                                                    <a href="{{ route('letter.detail', $letter) }}"
-                                                        class="btn btn-outline-warning btn-sm "
-                                                        data-bs-toggle="tooltip" 
-                                                        data-bs-placement="top" 
-                                                        title="Update Progress">
-                                                        <i class="fas fa-edit"></i>
-                                                    </a>
-                                                </div>
+                                                <a href="{{ route('letter.detail', $letter) }}"
+                                                    class="btn btn-outline-info btn-sm " data-bs-toggle="tooltip"
+                                                    data-bs-placement="top" title="Detail Surat">
+                                                    <i class="fas fa-clipboard-list"></i>
+                                                </a>
                                             </td>
                                         </tr>
                                     @endforeach

@@ -35,7 +35,6 @@ Route::group([
     Route::get('/edit/{edit:id}', [LetterController::class, 'edit'])->name('.edit');
     Route::put('/{id}', [LetterController::class, 'update'])->name('.update');
     Route::get('/{id}', [LetterController::class, 'destroy'])->name('.delete');
-
 });
 
 Route::group([
@@ -51,7 +50,9 @@ Route::group([
     'as' => 'progress',
     'midleware' => 'auth'
 ], function () {
-    Route::get('/', [ProgressController::class, 'index']);      
+    Route::get('/{status:id}', [ProgressController::class, 'show'])->name('.show');
+    Route::put('/{status:id}', [ProgressController::class, 'update'])->name('.update');
+
 });
 
 Route::group([

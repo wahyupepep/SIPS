@@ -162,4 +162,19 @@ class LetterController extends Controller
         return redirect()->route('letter')->with('delete', 'File berhasil dihapus!');
     }
 
+    public function search(Request $request)
+    {
+        $letters = Letter::when($request->keyword, function ($query) use ($request) {
+            $query->where('no_surat', 'like', "%{$request->keyword}%")
+                ->orWhere('asal', 'like', "%{$request->keyword}%");
+        })->get();
+
+        return view('tracks.index', compact('letters'));
+    }
+
+    public function detail($id)
+    {
+        $letter = Letter::find($id);
+        return view('tracks.detail', compact('letter'));
+    }    
 }

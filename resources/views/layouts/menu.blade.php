@@ -17,9 +17,9 @@
         <p>Mediator</p>
     </a>
 </li>
-<li class="nav-item">
+{{-- <li class="nav-item">
     <a href="{{ route('track')}}" class="nav-link">
         <i class="nav-icon fas fa-search-location"></i>
         <p>Lacak</p>
     </a>
-</li>
+</li> --}}

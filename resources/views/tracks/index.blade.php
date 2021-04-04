@@ -1,36 +1,49 @@
-@extends('layouts.app')
-@section('content-header')
-    <div class="content-header">
-        <div class="row">
-            {{-- <div class="col-md-6">
-                <h4>Lacak</h4>
-            </div>
-            <div class="col-md-6">
-                <ol class="breadcrumb float-sm-right">
-                    <li class="breadcrumb-item"><a href="{{ route('home') }}">Home</a></li>
-                    <li class="breadcrumb-item active">Lacak</li>
-                </ol>
-            </div> --}}
-        </div>
-    </div>
-@endsection
+<!doctype html>
+<html lang="en">
 
-@section('content')
-    <div class="container-fluid">
-        <h2 class="text-center display-4">Lacak Surat</h2>
-        <div class="row">
-            <div class="col-md-8 offset-md-2">
-                <form action="simple-results.html">
-                    <div class="input-group">
-                        <input type="search" class="form-control form-control-lg" placeholder="Tulis Nomor Surat Di Sini">
-                        <div class="input-group-append">
-                            <button type="submit" class="btn btn-lg btn-default">
-                                <i class="fa fa-search"></i>
-                            </button>
-                        </div>
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-eOJMYsd53ii+scO/bJGFsiCZc+5NDVN2yr8+0RDqr0Ql0h+rP48ckxlpbzKgwra6" crossorigin="anonymous">
+
+    <title>{{ config('app.name') }}</title>
+
+</head>
+
+<body>
+    <div class="container">
+
+        <div class="list-group">
+            @foreach ($letters as $letter)
+                <a href="{{ route('track.detail', $letter->id) }}"
+                    class="list-group-item list-group-item-action active" aria-current="true">
+                    <div class="d-flex w-100 justify-content-between">
+                        <h5 class="mb-1">{{ $letter->no_surat }}</h5>
+                        <small>{{ $letter->progresses[sizeof($letter->progresses) - 1]->status }}</small>
                     </div>
-                </form>
-            </div>
+                    <p class="mb-1">{{ $letter->isi }}</p>
+                    <small>{{ $letter->asal }}</small>
+                </a>
+            @endforeach
         </div>
     </div>
-@endsection
+
+    <!-- Optional JavaScript; choose one of the two! -->
+
+    <!-- Option 1: Bootstrap Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-JEW9xMcG8R+pH31jmWH6WWP0WintQrMb4s7ZOdauHnUtxwoG2vI5DkLtS3qm9Ekf" crossorigin="anonymous">
+    </script>
+
+    <!-- Option 2: Separate Popper and Bootstrap JS -->
+    <!--
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.1/dist/umd/popper.min.js" integrity="sha384-SR1sx49pcuLnqZUnnPwx6FCym0wLsk5JZuNx2bPPENzswTNFaQU1RDvt3wT4gWFG" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/js/bootstrap.min.js" integrity="sha384-j0CNLUeiqtyaRmlzUHCPZ+Gy5fQu0dQ6eZ/xAww941Ai1SxSY+0EQqNXNE6DZiVc" crossorigin="anonymous"></script>
+    -->
+</body>
+
+</html>

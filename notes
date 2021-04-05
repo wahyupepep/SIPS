@@ -1,10 +1,8 @@
 fitur yang masih kurang
-    - notifikasi
     - tampilan pada detail surat setelah dicari
-    - backgroound landing
 
 fitur yang masih error/tidak berfungsi
-    - tampilkan data berdasarkan orang yang login
+1. Error: surat yang ditampilkan semuanya/belum berdasarkan keyword
     - searching surat
-    - edit keterangan
-    - detail surat setelah dicari
+2. Error: Data surat yang tampil masih keseluruhan bukan berdasarkan akun pemilik surat
+    - tampilkan data berdasarkan orang yang login

@@ -38,7 +38,7 @@
                         <i class="fas fa-envelope bg-blue"></i>
                         <div class="timeline-item">
                             <span class="time"><i class="fas fa-clock"></i> {{ date_format($progress->created_at, 'd-M-Y') }}</span>
-                            <h3 class="timeline-header">{{ $progress->status }}</h3>
+                            <h3 class="timeline-header">{{ $progress->status[0]}}</h3>
 
                             <div class="timeline-body">
                                 {{ $progress->keterangan }}

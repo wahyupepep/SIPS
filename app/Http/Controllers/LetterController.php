@@ -159,7 +159,7 @@ class LetterController extends Controller
         Storage::delete($letter->signature);
         $letter->delete();
         // dd($letter);
-        return redirect()->route('letter')->with('delete', 'File berhasil dihapus!');
+        return redirect()->route('letter')->with('success', 'Data berhasil dihapus!');
     }
 
     public function search(Request $request)

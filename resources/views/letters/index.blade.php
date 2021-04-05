@@ -19,6 +19,7 @@
     <div class="container-fluid">
         <div class="row">
             <div class="col-12">
+                @include('layouts.alerts')
                 <div class="card">
                     <div class="card-header">
                         <div class="row">
@@ -39,7 +40,8 @@
                                         <th>No</th>
                                         <th>No. Surat</th>
                                         <th>Tanggal Surat</th>
-                                        <th>Deskripsi Singkat</th>
+                                        <th>Asal</th>
+                                        <th>Perselisihan</th>
                                         <th>Status</th>
                                         <th>Actions</th>
                                     </tr>
@@ -48,9 +50,10 @@
                                     @foreach ($letters as $no => $letter)
                                         <tr>
                                             <td class="text-center">{{ $letters->firstItem() + $no }}</td>
-                                            <td class="text-center">{{ $letter->no_surat }}</td>
-                                            <td class="text-center">{{ $letter->tgl_surat }}</td>
-                                            <td>{{ $letter->isi }}</td>
+                                            <td>{{ $letter->no_surat }}</td>
+                                            <td>{{ $letter->tgl_surat }}</td>
+                                            <td>{{ $letter->asal }}</td>
+                                            <td>{{ $letter->perselisihan }}</td>
                                             <td>{{ $letter->progresses[sizeof($letter->progresses) - 1]['status'] }}</td>
                                             <td class="text-center">
                                                 <a href="{{ route('letter.detail', $letter) }}"

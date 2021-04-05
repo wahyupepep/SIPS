@@ -27,14 +27,14 @@
                                 <h3 class="card-title">Detail Surat</h3>
                             </div>
                             <div class="col-md-6 col-6">
-                                <a href="{{ route('letter') }}" class="btn btn-danger btn-sm float-right"><i
+                                <a href="{{ route('letter') }}" class="btn btn-primary btn-sm float-right"><i
                                         class="fas fa-fw fa-arrow-left mr-1"></i>Kembali</a>
                             </div>
                         </div>
                     </div>
                     <div class="card-body">
                         <div class="row">
-                            <div class="col-md-6">
+                            <div class="col-md-4">
                                 <div class="form-group">
                                     <div class="row">
                                         <div class="col-md-12">
@@ -64,16 +64,19 @@
                                         </div>
                                     </div>
                                 </div>
-                                <img class="w-100" src="{{ asset('storage/' . $letter->image) }}">
                                 <div class="row justify-content-center">
                                     <a href="{{ route('letter.edit', $letter) }}"
-                                        class="btn bg-gradient-warning btn-sm"><i class="fas fa-pen mr-1"></i>Ubah</a>
+                                    class="btn bg-gradient-warning btn-sm"><i class="fas fa-pen mr-1"></i>Ubah</a>
                                     <a href="{{ route('letter.delete', $letter) }}"
-                                        class="btn bg-gradient-danger btn-sm ml-1"><i
-                                            class="fas fa-trash mr-1"></i>Hapus</a>
+                                    class="btn bg-gradient-danger btn-sm ml-1"><i
+                                    class="fas fa-trash mr-1"></i>Hapus</a>
                                 </div>
                             </div>
-                            <div class="col-md-6">
+                            <div class="col-md-3">
+
+                                <img class="w-100" src="{{ asset('storage/' . $letter->image) }}" alt="tidak ada gambar">
+                            </div>
+                            <div class="col-md-5">
                                 <ul class="list-group">
                                     @foreach ($letter->progresses as $key => $progress)
                                         <li
@@ -84,7 +87,8 @@
                                             </div>
                                             @if ((sizeof($letter->progresses)-1) <= $key)
                                                 <a href="{{ route('progress.show', $progress) }}"
-                                                    class="btn btn-primary btn-sm">
+                                                    class="btn btn-info btn-sm" data-bs-toggle="tooltip"
+                                                    data-bs-placement="top" title="Ubah Keterangan">
                                                     <i class="fas fa-edit"></i>
                                                 </a>
                                             @endif

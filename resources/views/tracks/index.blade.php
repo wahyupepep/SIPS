@@ -15,21 +15,27 @@
 </head>
 
 <body>
-    <div class="container">
-
-        <div class="list-group">
-            @foreach ($letters as $letter)
-                <a href="{{ route('track.detail', $letter->id) }}"
-                    class="list-group-item list-group-item-action active" aria-current="true">
-                    <div class="d-flex w-100 justify-content-between">
-                        <h5 class="mb-1">{{ $letter->no_surat }}</h5>
-                        <small>{{ $letter->progresses[sizeof($letter->progresses) - 1]->status }}</small>
-                    </div>
-                    <p class="mb-1">{{ $letter->isi }}</p>
-                    <small>{{ $letter->asal }}</small>
-                </a>
-            @endforeach
+    <div class="container mt-5">
+        <h1 class="text-center" style="font-family:Arial, Helvetica, sans-serif;"> Penelusuran Terkait</h1>
+        <div class="card">
+            <div class="card-body">
+                <div class="list-group">
+                    @foreach ($letters as $letter)
+                        <a href="{{ route('track.detail', $letter->id) }}"
+                            class="list-group-item list-group-item-action hovered" aria-current="true">
+                            <div class="d-flex w-100 justify-content-between">
+                                <h5 class="mb-1">{{ $letter->no_surat }}</h5>
+                                <small>{{ $letter->progresses[sizeof($letter->progresses) - 1]['status'] }}</small>
+                            </div>
+                            <p class="mb-1">{{ $letter->isi }}</p>
+                            <small>{{ $letter->asal }}</small>
+                        </a>
+                    @endforeach
+                </div>
+            </div>
         </div>
+
+
     </div>
 
     <!-- Optional JavaScript; choose one of the two! -->

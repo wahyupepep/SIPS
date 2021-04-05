@@ -36,6 +36,7 @@ Route::group([
     Route::get('/edit/{edit:id}', [LetterController::class, 'edit'])->name('.edit');
     Route::put('/{id}', [LetterController::class, 'update'])->name('.update');
     Route::get('/{id}', [LetterController::class, 'destroy'])->name('.delete');
+    Route::get('/{id}/add-status', [LetterController::class, 'addStatus'])->name('.add-status');
 });
 
 Route::group([
@@ -53,6 +54,7 @@ Route::group([
 ], function () {
     Route::get('/{status:id}', [ProgressController::class, 'show'])->name('.show');
     Route::put('/{status:id}', [ProgressController::class, 'update'])->name('.update');
+    Route::post('/{status:id}', [ProgressController::class, 'store'])->name('.store');
 
 });
 

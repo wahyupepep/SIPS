@@ -66,27 +66,33 @@
                                 </div>
                                 <img class="w-100" src="{{ asset('storage/' . $letter->image) }}">
                                 <div class="row justify-content-center">
-                                    <a href="{{ route('letter.edit', $letter) }}" class="btn bg-gradient-warning btn-sm"><i
-                                            class="fas fa-pen mr-1"></i>Ubah</a>
-                                    <a href="{{ route('letter.delete', $letter) }}" class="btn bg-gradient-danger btn-sm ml-1"><i
+                                    <a href="{{ route('letter.edit', $letter) }}"
+                                        class="btn bg-gradient-warning btn-sm"><i class="fas fa-pen mr-1"></i>Ubah</a>
+                                    <a href="{{ route('letter.delete', $letter) }}"
+                                        class="btn bg-gradient-danger btn-sm ml-1"><i
                                             class="fas fa-trash mr-1"></i>Hapus</a>
                                 </div>
                             </div>
                             <div class="col-md-6">
                                 <ul class="list-group">
-                                    @foreach ($letter->progresses as $progress)
+                                    @foreach ($letter->progresses as $key => $progress)
                                         <li
                                             class="list-group-item list-group-item-action d-flex justify-content-between align-items-center">
                                             <div>
                                                 <div class="font-weight-bold">{{ $progress['status'] }}</div>
                                                 {{ $progress['keterangan'] }}
                                             </div>
-                                            <a href="{{ route('progress.show', $progress) }}" class="btn btn-primary btn-sm">
-                                                <i class="fas fa-edit"></i>
-                                            </a>
+                                            @if ((sizeof($letter->progresses)-1) <= $key)
+                                                <a href="{{ route('progress.show', $progress) }}"
+                                                    class="btn btn-primary btn-sm">
+                                                    <i class="fas fa-edit"></i>
+                                                </a>
+                                            @endif
                                         </li>
                                     @endforeach
                                 </ul>
+                                <a href="{{ route('letter.add-status', $letter->id) }}"
+                                    class="btn btn-success mt-3 btn-block">Update Status</a>
                             </div>
                         </div>
                     </div>

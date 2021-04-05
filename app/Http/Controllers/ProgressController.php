@@ -34,9 +34,15 @@ class ProgressController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(Request $request,$id)
     {
-        //
+        $progress = Progress::create([
+            'letter_id' => $id,
+            'status' => $request->status,
+            'keterangan' => $request->keterangan
+        ]);
+
+        return redirect()->route('letter.detail', $progress->letter->id)->with('success', 'Data Berhasil Diubah!');
     }
 
     /**

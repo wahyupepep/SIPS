@@ -177,4 +177,14 @@ class LetterController extends Controller
         $letter = Letter::find($id);
         return view('tracks.detail', compact('letter'));
     }    
+
+    public function addStatus($id)
+    {
+        $letter = Letter::find($id);
+        $progresses = new Progress();
+        return view('letters.addStatus', [
+            'id'=>$id,
+            'status'=>$progresses->status[sizeof($letter->progresses)]
+        ]);
+    }
 }

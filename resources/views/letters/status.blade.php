@@ -37,7 +37,8 @@
                                     <label for="status">Progress</label>
                                 </div>
                                 <div class="col-md-10">
-                                    <input type="text" value="{{ $progress->status }}" class="form-control" readonly>                 
+                                    {{-- wajib digawe array pep walaupun object soale tipe mu enum kui tak tambahi array [0] --}}
+                                    <input type="text" value="{{ $progress->status[0] }}" class="form-control" readonly>                 
                                 </div>
                             </div>
                         </div>

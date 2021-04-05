@@ -17,9 +17,9 @@
 
 </head>
 
-<body class="hold-transition login-page">
+<body class="hold-transition login-page" style="background-color: aliceblue">
     <div class="login-box">
-        <div class="login-logo">
+        <div class="login-logo font-weight-bold" style="font-size: 45px">
             <a href="{{ url('/home') }}"><b>{{ config('app.name') }}</b></a>
         </div>
         <!-- /.login-logo -->
@@ -58,7 +58,7 @@
                     </div>
 
                     <div class="row">
-                        <div class="col-8 text-white">
+                        <div class="col-8">
                             <div class="icheck-primary">
                                 <a href="{{ route('register') }}" class="text-center">Register a new membership</a>
                             </div>

@@ -19,54 +19,52 @@
 
 </head>
 
-<body>
-    <div class="container-fluid">
-
+<body style="background-color:aliceblue">
+    <div class="container mt-5">
         <!-- Timelime example  -->
         <div class="row">
             <div class="col-md-12">
-                <!-- The time line -->
-                <div class="timeline">
-                    <!-- timeline time label -->
-                    <div class="time-label">
-                        <span class="bg-red">10 Feb. 2014</span>
+                <div class="card">
+                    <div class="card-header bg-dark">
+                        <div class="row">
+                            <div class="col-md-6 col-6 my-auto">
+                                <h3 class="card-title">Data Progress Surat</h3>
+                            </div>
+                            <div class="col-md-6 col-6">
+                                <a href="" class="btn btn-danger btn-sm float-right"><i
+                                        class="fas fa-fw fa-home mr-1" data-bs-toggle="tooltip"
+                                        data-bs-placement="top" title="Kembali Ke Halaman Awal"></i></a>
+                            </div>
+                        </div>
                     </div>
-                    <!-- /.timeline-label -->
-                    @foreach ($letter->progresses as $progress)
-                    <!-- timeline item -->
-                    <div>
-                        <i class="fas fa-envelope bg-blue"></i>
-                        <div class="timeline-item">
-                            <span class="time"><i class="fas fa-clock"></i> {{ date_format($progress->created_at, 'd-M-Y') }}</span>
-                            <h3 class="timeline-header">{{ $progress->status[0]}}</h3>
+                    <div class="card-body">
+                        <!-- The time line -->
+                        <div class="timeline">
+                            <!-- timeline time label -->
+                            <div class="time-label">
+                                <span class="bg-warning">Timeline</span>
+                            </div>
+                            <!-- /.timeline-label -->
+                            @foreach ($letter->progresses as $progress)
+                                <!-- timeline item -->
+                                <div>
+                                    <i class="fas fa-envelope bg-primary"></i>
+                                    <div class="timeline-item">
+                                        <span class="time"><i class="fas fa-clock"></i>
+                                            {{ date_format($progress->created_at, 'd-M-Y') }}</span>
+                                        <h3 class="timeline-header">{{ $progress->status[0] }}</h3>
 
-                            <div class="timeline-body">
-                                {{ $progress->keterangan }}
+                                        <div class="timeline-body">
+                                            {{ $progress->keterangan }}
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- END timeline item -->
+                            @endforeach                            
+                            <div>
+                                <i class="fas fa-clock bg-gray"></i>
                             </div>
                         </div>
-                    </div>
-                    <!-- END timeline item -->
-                    @endforeach
-                    <!-- timeline item -->
-                    <div>
-                        <i class="fas fa-comments bg-yellow"></i>
-                        <div class="timeline-item">
-                            <span class="time"><i class="fas fa-clock"></i> 27 mins ago</span>
-                            <h3 class="timeline-header"><a href="#">Jay White</a> commented on your post</h3>
-                            <div class="timeline-body">
-                                Take me to your leader!
-                                Switzerland is small and neutral!
-                                We are more like Germany, ambitious and misunderstood!
-                            </div>
-                            <div class="timeline-footer">
-                                <a class="btn btn-warning btn-sm">View comment</a>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- END timeline item -->
-                    
-                    <div>
-                        <i class="fas fa-clock bg-gray"></i>
                     </div>
                 </div>
             </div>
@@ -80,7 +78,7 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-JEW9xMcG8R+pH31jmWH6WWP0WintQrMb4s7ZOdauHnUtxwoG2vI5DkLtS3qm9Ekf" crossorigin="anonymous">
     </script>
-    
+
 
     <!-- Option 2: Separate Popper and Bootstrap JS -->
     <!--

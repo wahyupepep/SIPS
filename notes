@@ -6,3 +6,5 @@ fitur yang masih error/tidak berfungsi
     - searching surat
 2. Error: Data surat yang tampil masih keseluruhan bukan berdasarkan akun pemilik surat
     - tampilkan data berdasarkan orang yang login
+3. Belum menampilkan nama user di pencarian surat
+4. Tombol home pada tracks.detail.blade.php belum berfungsi

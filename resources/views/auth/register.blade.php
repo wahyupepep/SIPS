@@ -15,9 +15,9 @@
     <link href="{{ mix('css/app.css') }}" rel="stylesheet">
 
 </head>
-<body class="hold-transition register-page">
+<body class="hold-transition register-page" style="background-color: aliceblue">
 <div class="register-box">
-    <div class="register-logo">
+    <div class="register-logo font-weight-bold" style="font-size: 45px">
         <a href="{{ url('/home') }}"><b>{{ config('app.name') }}</b></a>
     </div>
 
@@ -102,15 +102,12 @@
                 </div>
 
                 <div class="row">
+                    <!-- /.col -->
                     <div class="col-8">
                         <div class="icheck-primary">
-                            <input type="checkbox" id="agreeTerms" name="terms" value="agree">
-                            <label for="agreeTerms">
-                                I agree to the <a href="#">terms</a>
-                            </label>
+                            <a href="{{ route('login') }}" class="text-center">I already have a membership</a>                            
                         </div>
                     </div>
-                    <!-- /.col -->
                     <div class="col-4">
                         <button type="submit" class="btn btn-primary btn-block">Register</button>
                     </div>
@@ -118,7 +115,6 @@
                 </div>
             </form>
 
-            <a href="{{ route('login') }}" class="text-center">I already have a membership</a>
         </div>
         <!-- /.form-box -->
     </div><!-- /.card -->

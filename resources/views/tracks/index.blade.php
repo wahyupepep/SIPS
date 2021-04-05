@@ -14,8 +14,8 @@
 
 </head>
 
-<body>
-    <div class="container mt-5">
+<body style="background-color: aliceblue">
+    <div class="container mt-4 mb-5">
         <h1 class="text-center" style="font-family:Arial, Helvetica, sans-serif;"> Penelusuran Terkait</h1>
         <div class="card">
             <div class="card-body">

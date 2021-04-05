@@ -8,11 +8,13 @@
     <link href="https://fonts.googleapis.com/css?family=Poppins:400,800" rel="stylesheet" />
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-eOJMYsd53ii+scO/bJGFsiCZc+5NDVN2yr8+0RDqr0Ql0h+rP48ckxlpbzKgwra6" crossorigin="anonymous">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-eOJMYsd53ii+scO/bJGFsiCZc+5NDVN2yr8+0RDqr0Ql0h+rP48ckxlpbzKgwra6" crossorigin="anonymous">
     <link href="{{ asset('css/welcome.css') }}" rel="stylesheet" />
 </head>
 
 <body>
-  <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+    {{-- <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
     <div class="container">
       <a class="navbar-brand" href="#">SIPS</a>
     
@@ -21,7 +23,7 @@
       </a>
    
     </div>
-  </nav>
+  </nav> --}}
     <div class="s004">
         <form action="{{ route('track.search') }}" method="POST">
             @csrf
@@ -38,6 +40,14 @@
                                 </path>
                             </svg>
                         </button>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="justify-content-center">
+                        <div class="suggestion-wrap">
+                            <a href="{{ route('login') }}">Login &nbsp;&nbsp;|</a>
+                            <a href="{{ route('register') }}">Register</a>
+                        </div>
                     </div>
                 </div>
             </fieldset>

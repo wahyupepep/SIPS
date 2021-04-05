@@ -819,7 +819,7 @@ legend {
   -ms-flex-align: center;
       align-items: center;
   font-family: 'Poppins', sans-serif;
-  background: url("../image/Searchs_004.png");
+  background: url("../image/bgg.jpg");
   background-size: cover;
   background-position: center center;
   padding: 15px;
@@ -831,11 +831,11 @@ legend {
 }
 
 .s004 form legend {
-  font-size: 36px;
+  font-size: 68px;
   color: #fff;
   font-weight: 800;
   text-align: center;
-  margin-bottom: 50px;
+  margin-bottom: 30px;
 }
 
 .s004 form .inner-form {
@@ -957,16 +957,17 @@ legend {
 
 .s004 form .suggestion-wrap {
   padding: 0 15px;
+  text-align: right;
 }
 
-.s004 form .suggestion-wrap span {
-  font-size: 14px;
+.s004 form .suggestion-wrap a {
+  font-size: 18px;
   font-family: 'Helvetica', sans-serif;
   display: inline-block;
-  padding: 0 15px;
-  line-height: 32px;
+  padding: 0 5px;
   color: #fff;
+  text-decoration: none;
+  line-height: 32px;
   border-radius: 16px;
-  margin-right: 10px;
   margin-bottom: 10px;
 }

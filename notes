@@ -1,6 +1,4 @@
 fitur yang masih error/tidak berfungsi
-1. Error: Data surat yang tampil masih keseluruhan bukan berdasarkan akun pemilik surat
-    - tampilkan data berdasarkan orang yang login
-3. Belum menampilkan nama user di pencarian surat
+1. Belum menampilkan nama user di pencarian surat
 2. Error: surat yang ditampilkan semuanya/belum berdasarkan keyword
     - searching surat

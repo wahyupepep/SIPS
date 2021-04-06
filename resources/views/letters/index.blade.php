@@ -47,7 +47,24 @@
                                     </tr>
                                 </thead>
                                 <tbody>
-                                    @foreach ($letters as $no => $letter)
+                                    @foreach ($surat as $item)
+                                    <tr>
+                                        <td class="text-center">{{ $loop->iteration }}</td>
+                                        <td>{{ $item->no_surat }}</td>
+                                        <td>{{ $item->tgl_surat }}</td>
+                                        <td>{{ $item->asal }}</td>
+                                        <td>{{ $item->perselisihan }}</td>
+                                        <td>{{ $item->progresses[sizeof($item->progresses) - 1]['status'] }}</td>
+                                        <td class="text-center">
+                                            <a href="{{ route('letter.detail', $item) }}"
+                                                class="btn btn-outline-info btn-sm " data-bs-toggle="tooltip"
+                                                data-bs-placement="top" title="Detail Surat">
+                                                <i class="fas fa-clipboard-list"></i>
+                                            </a>
+                                        </td>
+                                    </tr>
+                                    @endforeach
+                                    {{-- @foreach ($letters as $no => $letter)
                                         <tr>
                                             <td class="text-center">{{ $letters->firstItem() + $no }}</td>
                                             <td>{{ $letter->no_surat }}</td>
@@ -63,12 +80,12 @@
                                                 </a>
                                             </td>
                                         </tr>
-                                    @endforeach
+                                    @endforeach --}}
                                 </tbody>
                             </table>
                         </div>
                         <div class="float-right mt-3">
-                            {{ $letters->links() }}
+                            {{-- {{ $letters->links() }} --}}
                         </div>
                     </div>
                     <!-- /.card-body -->

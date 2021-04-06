@@ -20,7 +20,10 @@ class LetterController extends Controller
     public function index()
     {
         $letters = Letter::with('progresses')->simplePaginate(10);
-        return view('letters.index', ['letters' => $letters]);
+        $user = auth()->id();
+        // dd($user);
+        $surat = Letter::where('user_id', $user)->get();
+        return view('letters.index', compact('surat'));
     }
 
     /**

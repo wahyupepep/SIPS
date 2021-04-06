@@ -31,7 +31,7 @@
                                 <h3 class="card-title">Data Progress Surat</h3>
                             </div>
                             <div class="col-md-6 col-6">
-                                <a href="#" class="btn btn-danger btn-sm float-right"><i
+                                <a href="/" class="btn btn-danger btn-sm float-right"><i
                                         class="fas fa-fw fa-home mr-1" data-bs-toggle="tooltip"
                                         data-bs-placement="top" title="Kembali Ke Halaman Awal"></i></a>
                             </div>

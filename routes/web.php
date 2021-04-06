@@ -1,7 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\{LetterController,HomeController,MediatorController,ProgressController,TrackController};
+use App\Http\Controllers\{LetterController,HomeController,MediatorController,ProgressController};
 use Illuminate\Support\Facades\Auth;
 
 /*
@@ -62,6 +62,7 @@ Route::group([
 ], function () {
     Route::post('/', [LetterController::class, 'search'])->name('.search');      
     Route::get('/{id}', [LetterController::class, 'detail'])->name('.detail');      
+    
 });
 
 

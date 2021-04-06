@@ -2,9 +2,9 @@ fitur yang masih kurang
     - tampilan pada detail surat setelah dicari
 
 fitur yang masih error/tidak berfungsi
-1. Error: surat yang ditampilkan semuanya/belum berdasarkan keyword
-    - searching surat
-2. Error: Data surat yang tampil masih keseluruhan bukan berdasarkan akun pemilik surat
+1. Error: Data surat yang tampil masih keseluruhan bukan berdasarkan akun pemilik surat
     - tampilkan data berdasarkan orang yang login
 3. Belum menampilkan nama user di pencarian surat
+2. Error: surat yang ditampilkan semuanya/belum berdasarkan keyword
+    - searching surat
 4. Tombol home pada tracks.detail.blade.php belum berfungsi

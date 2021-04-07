@@ -31,7 +31,7 @@
                 <legend>LACAK SURAT</legend>
                 <div class="inner-form">
                     <div class="input-field">
-                        <input class="form-control" id="choices-text-preset-values" type="text"
+                        <input class="form-control" id="choices-text-preset-values" type="text" name="keyword"
                             placeholder="Silahkan Ketik Nomor Surat..." />
                         <button class="btn-search" type="submit">
                             <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">

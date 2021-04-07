@@ -25,7 +25,8 @@
                             class="list-group-item list-group-item-action hovered" aria-current="true">
                             <div class="d-flex w-100 justify-content-between">
                                 <h5 class="mb-1">{{ $letter->no_surat }}</h5>
-                                <small>{{ $letter->progresses[sizeof($letter->progresses) - 1]['status'] }}</small>
+                                {{-- <small>{{ $letter->progresses[sizeof($letter->progresses) - 1]['status'] }}</small> --}}
+                                <small>{{$letter->name}}</small>
                             </div>
                             <p class="mb-1">{{ $letter->isi }}</p>
                             <small>{{ $letter->asal }}</small>

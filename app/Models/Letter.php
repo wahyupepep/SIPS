@@ -29,5 +29,5 @@ class Letter extends Model
     {
         return $this->hasMany(Progress::class);
     }
-
+    
 }

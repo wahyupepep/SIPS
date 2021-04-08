@@ -27,7 +27,8 @@
                                 <h3 class="card-title">Informasi Surat</h3>
                             </div>
                             <div class="col-md-6 col-6">
-                                <a href="{{ route('letter') }}" class="btn btn-sm btn-danger float-right">Kembali</a>
+                                <a href="{{ route('letter') }}" class="btn btn-danger btn-sm float-right"><i
+                                        class="fas fa-fw fa-arrow-left mr-1"></i>Kembali</a>
                             </div>
                         </div>
                     </div>
@@ -129,7 +130,8 @@
                             </div>
 
                             <div class="d-flex justify-content-center">
-                                <button type="submit" class="btn btn-primary mt-3 ">Submit</button>
+                                <button type="submit" class="btn btn-success mt-3"><i
+                                    class="fas fa-fw fa-check mr-1"></i>Simpan</button>
                             </div>
                         </form>
                     </div>

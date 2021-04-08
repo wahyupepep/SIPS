@@ -34,7 +34,7 @@
                     </div>
                     <div class="card-body">
                         <div class="table-responsive">
-                            <table id="listletter" class="table table-bordered table-hover">
+                            <table id="example2" class="table table-bordered table-hover">
                                 <thead class="text-center thead-dark">
                                     <tr>
                                         <th>No</th>
@@ -48,21 +48,21 @@
                                 </thead>
                                 <tbody>
                                     @foreach ($surat as $item)
-                                    <tr>
-                                        <td class="text-center">{{ $loop->iteration }}</td>
-                                        <td>{{ $item->no_surat }}</td>
-                                        <td>{{ $item->tgl_surat }}</td>
-                                        <td>{{ $item->asal }}</td>
-                                        <td>{{ $item->perselisihan }}</td>
-                                        <td>{{ $item->progresses[sizeof($item->progresses) - 1]['status'] }}</td>
-                                        <td class="text-center">
-                                            <a href="{{ route('letter.detail', $item) }}"
-                                                class="btn btn-outline-info btn-sm " data-bs-toggle="tooltip"
-                                                data-bs-placement="top" title="Detail Surat">
-                                                <i class="fas fa-clipboard-list"></i>
-                                            </a>
-                                        </td>
-                                    </tr>
+                                        <tr>
+                                            <td class="text-center">{{ $loop->iteration }}</td>
+                                            <td>{{ $item->no_surat }}</td>
+                                            <td>{{ $item->tgl_surat }}</td>
+                                            <td>{{ $item->asal }}</td>
+                                            <td>{{ $item->perselisihan }}</td>
+                                            <td>{{ $item->progresses[sizeof($item->progresses) - 1]['status'] }}</td>
+                                            <td class="text-center">
+                                                <a href="{{ route('letter.detail', $item) }}"
+                                                    class="btn btn-outline-info btn-sm " data-bs-toggle="tooltip"
+                                                    data-bs-placement="top" title="Detail Surat">
+                                                    <i class="fas fa-clipboard-list"></i>
+                                                </a>
+                                            </td>
+                                        </tr>
                                     @endforeach
                                     {{-- @foreach ($letters as $no => $letter)
                                         <tr>
@@ -94,29 +94,4 @@
         </div>
     </div>
     </div>
-@endsection
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-@section('third_party_scripts')
-
 @endsection

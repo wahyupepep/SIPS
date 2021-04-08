@@ -27,106 +27,133 @@
                                 <h3 class="card-title">Informasi Surat</h3>
                             </div>
                             <div class="col-md-6 col-6">
-                                <a href="{{ route('letter') }}" class="btn btn-primary btn-sm float-right"><i
+                                <a href="{{ route('letter') }}" class="btn btn-danger btn-sm float-right"><i
                                         class="fas fa-fw fa-arrow-left mr-1"></i>Kembali</a>
                             </div>
                         </div>
                     </div>
                     <div class="card-body">
                         <form action="{{ route('letter.store') }}" method="POST" enctype="multipart/form-data">
-                            @csrf
-                            <!-- no_surat -->
-                            <div class="form-group">
-                                <div class="row">
-                                    <div class="col-md-2">
-                                        <label for="no_surat">No. Surat</label>
-                                    </div>
-                                    <div class="col-md-10">
-                                        <input type="text" class="form-control"
-                                            id="no_surat" name="no_surat" value="{{ old('no_surat') }}"
-                                            autocomplete="off">
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="form-group">
-                                <div class="row">
-                                    <div class="col-md-2">
-                                        <label for="tgl_surat">Tanggal Surat</label>
-                                    </div>
-                                    <div class="col-md-10">
-                                        <input type="date" class="form-control"
-                                            id="tgl_surat" name="tgl_surat" value="{{ old('tgl_surat') }}"
-                                            autocomplete="off">
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="form-group">
-                                <div class="row">
-                                    <div class="col-md-2">
-                                        <label for="asal">Asal Surat</label>
-                                    </div>
-                                    <div class="col-md-10">
-                                        <input type="text" class="form-control"
-                                            id="asal" name="asal" value="{{ old('asal') }}"
-                                            autocomplete="off">
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="form-group">
-                                <div class="row">
-                                    <div class="col-md-2">
-                                        <label for="perselisihan">Jenis perselisihan</label>
-                                    </div>
-                                    <div class="col-md-10">
-                                        <div class="form-check form-check-inline">
-                                            <input class="form-check-input" type="radio" name="perselisihan" id="inlineRadio1"
-                                                value="Hak">
-                                            <label class="form-check-label" for="inlineRadio1">Hak</label>
-                                        </div>
-                                        <div class="form-check form-check-inline">
-                                            <input class="form-check-input" type="radio" name="perselisihan" id="inlineRadio2"
-                                                value="Kepentingan">
-                                            <label class="form-check-label" for="inlineRadio2">Kepentingan</label>
-                                        </div>
-                                        <div class="form-check form-check-inline">
-                                            <input class="form-check-input" type="radio" name="perselisihan" id="inlineRadio2"
-                                                value="PHK">
-                                            <label class="form-check-label" for="inlineRadio2">PHK</label>
-                                        </div>
-                                        <div class="form-check form-check-inline">
-                                            <input class="form-check-input" type="radio" name="perselisihan" id="inlineRadio2"
-                                                value="SP/SB">
-                                            <label class="form-check-label" for="inlineRadio2">SP/SB</label>
+                            <div class="row">
+                                <div class="col-md-7">
+                                    @csrf
+                                    <div class="form-group">
+                                        <div class="row">
+                                            <div class="col-md-4">
+                                                <label for="no_surat">No. Surat</label>
+                                            </div>
+                                            <div class="col-md-8">
+                                                <input type="text" class="form-control" id="no_surat" name="no_surat"
+                                                    value="{{ old('no_surat') }}" autocomplete="off">
+                                                @error('no_surat')
+                                                    <div class="text-danger mt-2">
+                                                        No. Surat wajib diisi
+                                                    </div>
+                                                @enderror
+                                            </div>
                                         </div>
                                     </div>
+                                    <div class="form-group">
+                                        <div class="row">
+                                            <div class="col-md-4">
+                                                <label for="tgl_surat">Tanggal Surat</label>
+                                            </div>
+                                            <div class="col-md-8">
+                                                <input type="date" class="form-control" id="tgl_surat" name="tgl_surat"
+                                                    value="{{ old('tgl_surat') }}" autocomplete="off">
+                                                @error('tgl_surat')
+                                                    <div class="text-danger mt-2">
+                                                        Tanggal Surat wajib diisi
+                                                    </div>
+                                                @enderror
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <div class="row">
+                                            <div class="col-md-4">
+                                                <label for="asal">Asal Surat</label>
+                                            </div>
+                                            <div class="col-md-8">
+                                                <input type="text" class="form-control" id="asal" name="asal"
+                                                    value="{{ old('asal') }}" autocomplete="off">
+                                                @error('asal')
+                                                    <div class="text-danger mt-2">
+                                                        Asal Surat wajib diisi
+                                                    </div>
+                                                @enderror
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <div class="row">
+                                            <div class="col-md-4">
+                                                <label for="perselisihan">Jenis perselisihan</label>
+                                            </div>
+                                            <div class="col-md-8">
+                                                <div class="form-check form-check-inline">
+                                                    <input class="form-check-input" type="radio" name="perselisihan"
+                                                        id="inlineRadio1" value="Hak">
+                                                    <label class="form-check-label" for="inlineRadio1">Hak</label>
+                                                </div>
+                                                <div class="form-check form-check-inline">
+                                                    <input class="form-check-input" type="radio" name="perselisihan"
+                                                        id="inlineRadio2" value="Kepentingan">
+                                                    <label class="form-check-label" for="inlineRadio2">Kepentingan</label>
+                                                </div>
+                                                <div class="form-check form-check-inline">
+                                                    <input class="form-check-input" type="radio" name="perselisihan"
+                                                        id="inlineRadio2" value="PHK">
+                                                    <label class="form-check-label" for="inlineRadio2">PHK</label>
+                                                </div>
+                                                <div class="form-check form-check-inline">
+                                                    <input class="form-check-input" type="radio" name="perselisihan"
+                                                        id="inlineRadio2" value="SP/SB">
+                                                    <label class="form-check-label" for="inlineRadio2">SP/SB</label>
+                                                </div>
+                                                @error('perselisihan')
+                                                    <div class="text-danger mt-2">
+                                                        Jenis Perselisihan wajib diisi
+                                                    </div>
+                                                @enderror
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <div class="row">
+                                            <div class="col-md-4">
+                                                <label for="isi">Deskripsi Singkat</label>
+                                            </div>
+                                            <div class="col-md-8">
+                                                <textarea type="text" class="form-control" id="isi" name="isi"
+                                                    value="{{ old('isi') }}" autocomplete="off">
+                                                                                    </textarea>
+                                                @error('isi')
+                                                    <div class="text-danger mt-2">
+                                                        Deskripsi Singkat wajib diisi
+                                                    </div>
+                                                @enderror
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-1">
+                                </div>
+                                <div class="col-md-4">
+                                    <div class="form-group">
+                                        <div class="row">
+                                            <div class="col-12">
+                                                <label for="image">Upload Foto</label>
+                                                <input type="file" class="form-control-file" id="image" name="image">
+                                            </div>
+
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
-                            <div class="form-group">
-                                <div class="row">
-                                    <div class="col-md-2">
-                                        <label for="isi">Deskripsi Singkat</label>
-                                    </div>
-                                    <div class="col-md-10">
-                                        <textarea type="text" class="form-control"
-                                            id="isi" name="isi" value="{{ old('isi') }}"
-                                            autocomplete="off">
-                                        </textarea>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="form-group">
-                                <div class="row">
-                                    <div class="col-md-2">
-                                        <label for="image">Upload Foto</label>
-                                    </div>
-                                    <div class="col-md-10">
-                                        <input type="file" class="form-control-file" id="image" name="image">
-                                    </div>
-                                </div>
-                            </div>
-                            
                             <div class="d-flex justify-content-center">
-                                <button type="submit" class="btn btn-success mt-3 ">Submit</button>
+                                <button type="submit" class="btn btn-success mt-3"><i
+                                    class="fas fa-fw fa-check mr-1"></i>Simpan</button>
                             </div>
                         </form>
                     </div>

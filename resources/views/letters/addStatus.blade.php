@@ -51,7 +51,8 @@
                             </div>
                         </div>
                         <div class="d-flex justify-content-center">
-                            <button type="submit" class="btn btn-primary mt-3 ">Update Progress</button>
+                            <button type="submit" class="btn btn-success mt-3 "><i
+                                class="fas fa-fw fa-check mr-1"></i>Simpan</button>
                         </div>
                        </form>
                     </div>

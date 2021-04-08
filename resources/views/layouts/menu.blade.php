@@ -11,10 +11,11 @@
         <p>Surat</p>
     </a>
 </li>
-<li class="nav-item">
+{{-- <li class="nav-item">
     <a href="{{ route('mediator') }}" class="nav-link">
         <i class="nav-icon fas fa-users"></i>
         <p>Mediator</p>
     </a>
-</li>
+</li> --}}
+
 

@@ -24,7 +24,7 @@
                         <div class="row">
                             <div class="col-md-6 col-6 my-auto">
                                 <h3 class="card-title">Data Progress</h3>
-                            </div>
+                            </div>                           
                         </div>
                     </div>
                     <div class="card-body">
@@ -34,7 +34,7 @@
                            <div class="form-group">
                             <div class="row">
                                 <div class="col-md-2">
-                                    <label for="status">Progress</label>
+                                    <label for="status">Status</label>
                                 </div>
                                 <div class="col-md-10">
                                     {{-- wajib digawe array pep walaupun object soale tipe mu enum kui tak tambahi array [0] --}}
@@ -53,7 +53,8 @@
                             </div>
                         </div>
                         <div class="d-flex justify-content-center">
-                            <button type="submit" class="btn btn-primary mt-3 ">Update Progress</button>
+                            <button type="submit" class="btn btn-success mt-3 "><i
+                                class="fas fa-fw fa-check mr-1"></i>Simpan</button>
                         </div>
                        </form>
                     </div>

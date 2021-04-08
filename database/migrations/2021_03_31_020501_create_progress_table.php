@@ -16,7 +16,7 @@ class CreateProgressTable extends Migration
         Schema::create('progress', function (Blueprint $table) {
             $table->id();
             $table->foreignId('letter_id')->unsigned();
-            $table->enum('status',['Pelajari','Klarifikasi','Mediasi','PB','Anjuran'])->default('Pelajari');
+            $table->enum('status',['Pelajari','Klarifikasi','Mediasi','Anjuran'])->default('Pelajari');
             $table->string('keterangan')->nullable();
             $table->timestamps();
 

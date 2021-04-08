@@ -27,7 +27,7 @@
                                 <h3 class="card-title">Detail Surat</h3>
                             </div>
                             <div class="col-md-6 col-6">
-                                <a href="{{ route('letter') }}" class="btn btn-primary btn-sm float-right"><i
+                                <a href="{{ route('letter') }}" class="btn btn-danger btn-sm float-right"><i
                                         class="fas fa-fw fa-arrow-left mr-1"></i>Kembali</a>
                             </div>
                         </div>
@@ -73,7 +73,6 @@
                                 </div>
                             </div>
                             <div class="col-md-3">
-
                                 <img class="w-100" src="{{ asset('storage/' . $letter->image) }}" alt="tidak ada gambar">
                             </div>
                             <div class="col-md-5">
@@ -96,7 +95,7 @@
                                     @endforeach
                                 </ul>
                                 <a href="{{ route('letter.add-status', $letter->id) }}"
-                                    class="btn btn-success mt-3 btn-block">Update Status</a>
+                                    class="btn btn-primary mt-3 btn-block">Perbarui Status</a>
                             </div>
                         </div>
                     </div>

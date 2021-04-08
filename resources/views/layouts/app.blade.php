@@ -11,11 +11,7 @@
         crossorigin="anonymous" />
 
     <link href="{{ mix('css/app.css') }}" rel="stylesheet">
-    @yield('css-datatables')
-
-    @yield('third_party_stylesheets')
-
-    @stack('page_css')
+    <link rel="stylesheet" href={{ asset('plugins/datatables-bs4/css/dataTables.bootstrap4.min.css') }}>
 </head>
 
 <body class="hold-transition sidebar-mini layout-fixed">
@@ -31,7 +27,8 @@
 
             <ul class="navbar-nav ml-auto">
                 <li class="nav-item dropdown user-menu">
-                    <a href="{{ route('logout')}}" class="nav-link dropdown-toggle text-danger" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
+                    <a href="{{ route('logout') }}" class="nav-link dropdown-toggle text-danger"
+                        onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
                         <span class="d-none d-md-inline">
                             <i class="nav-icon fas fa-power-off mr-2"></i>Sign Out
                         </span>
@@ -39,7 +36,7 @@
                             @csrf
                         </form>
                     </a>
-                    
+
                 </li>
             </ul>
         </nav>
@@ -59,21 +56,30 @@
             </section>
         </div>
 
-        <!-- Main Footer -->
-        {{-- <footer class="main-footer text-white">
-            <div class="float-right d-none d-sm-block">
-                <b>Dinas Tenaga Kerja Dan Transmigrasi Jateng</b>
-            </div>
-            <strong>Copyright &copy; 2021
-        </footer> --}}
+
     </div>
 
-    <script src="{{ mix('js/app.js') }}" defer></script>
-    @yield('scripts-datatables')
+    {{-- <script src="{{ mix('js/app.js') }}" defer></script> --}}
+    <script src={{ asset('plugins/jquery/jquery.min.js') }}></script>
+    <script src={{ asset('plugins/bootstrap/js/bootstrap.bundle.min.js') }}></script>
+    <script src={{ asset('plugins/datatables/jquery.dataTables.min.js') }}></script>
+    <script src={{ asset('plugins/datatables-bs4/js/dataTables.bootstrap4.min.js') }}></script>
+    <script src={{ asset('plugins/datatables-responsive/js/dataTables.responsive.min.js') }}></script>
+    <script src={{ asset('plugins/datatables-responsive/js/responsive.bootstrap4.min.js') }}></script>
+    <script>
+        $(document).ready(function() {
+            $('#example2').DataTable({
+                "paging": true,
+                "lengthChange": false,
+                "searching": true,
+                "ordering": true,
+                "info": true,
+                "autoWidth": false,
+                "responsive": true,
+            });
+        });
 
-    @yield('third_party_scripts')
-
-    @stack('page_scripts')
+    </script>
 </body>
 
 </html>

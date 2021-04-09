@@ -33,7 +33,7 @@ Route::group([
     Route::get('/detail/{detail:id}', [LetterController::class, 'show'])->name('.detail');
     Route::get('/edit/{edit:id}', [LetterController::class, 'edit'])->name('.edit');
     Route::put('/{id}', [LetterController::class, 'update'])->name('.update');
-    Route::get('/{id}', [LetterController::class, 'destroy'])->name('.delete');
+    Route::delete('/{id}', [LetterController::class, 'destroy'])->name('.delete');
     Route::get('/{id}/add-status', [LetterController::class, 'addStatus'])->name('.add-status');
 });
 

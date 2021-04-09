@@ -81,8 +81,10 @@ class LetterController extends Controller
             'letter_id' => $letter->id
         ]);
 
-        session()->flash('success', 'Data Berhasil Ditambahkan');
-        return redirect('letter');
+        return redirect()->route('letter')->with('success', 'Data Berhasil Ditambahkan!');
+
+        // session()->flash('success', 'Data Berhasil Ditambahkan');
+        // return redirect('letter');
     }
 
     /**

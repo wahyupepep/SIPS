@@ -67,9 +67,15 @@
                                 <div class="row justify-content-center">
                                     <a href="{{ route('letter.edit', $letter) }}"
                                     class="btn bg-gradient-warning btn-sm"><i class="fas fa-pen mr-1"></i>Ubah</a>
-                                    <a href="{{ route('letter.delete', $letter) }}"
+                                    <form action="{{ route('letter.delete', $letter) }}" method="POST" onsubmit="return confirm('Yakin Ingin Menghapus Data Ini?')">
+                                        @method('delete')
+                                        @csrf
+                                        <button class="btn bg-gradient-danger btn-sm ml-1"><i
+                                        class="fas fa-trash mr-1"></i>Hapus</button>
+                                    </form>
+                                    {{-- <a href="{{ route('letter.delete', $letter) }}"
                                     class="btn bg-gradient-danger btn-sm ml-1"><i
-                                    class="fas fa-trash mr-1"></i>Hapus</a>
+                                    class="fas fa-trash mr-1"></i>Hapus</a> --}}
                                 </div>
                             </div>
                             <div class="col-md-3">

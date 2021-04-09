@@ -21,13 +21,14 @@
     <div class="login-box">
         <div class="login-logo font-weight-bold" style="font-size: 45px">
             <a href="{{ url('/home') }}"><b>{{ config('app.name') }}</b></a>
+            <h4>Sistem Informasi Pelacak Surat</h4>
         </div>
         <!-- /.login-logo -->
 
         <!-- /.login-box-body -->
         <div class="card">
             <div class="card-body login-card-body">
-                <p class="login-box-msg">Sign in to start your session</p>
+                {{-- <p class="login-box-msg">Sign in to start your session</p> --}}
 
                 <form method="post" action="{{ url('/login') }}">
                     @csrf

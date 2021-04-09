@@ -14,16 +14,15 @@
         integrity="sha384-eOJMYsd53ii+scO/bJGFsiCZc+5NDVN2yr8+0RDqr0Ql0h+rP48ckxlpbzKgwra6" crossorigin="anonymous">
     <link href="{{ mix('css/app.css') }}" rel="stylesheet">
 
-
     <title>{{ config('app.name') }}</title>
 
 </head>
 
-<body style="background-color:aliceblue">
+<body style="background-image:url({{ asset('image/bgg.jpg') }});">
     <div class="container mt-5">
         <!-- Timelime example  -->
-        <div class="row">
-            <div class="col-md-12">
+        <div class="row justify-content-center">
+            <div class="col-md-9">
                 <div class="card">
                     <div class="card-header bg-dark">
                         <div class="row">
@@ -31,7 +30,7 @@
                                 <h3 class="card-title">Data Progress Surat</h3>
                             </div>
                             <div class="col-md-6 col-6">
-                                <a href="/" class="btn btn-danger btn-sm float-right"><i
+                                <a href="/" class="btn btn-success btn-sm float-right"><i
                                         class="fas fa-fw fa-home mr-1" data-bs-toggle="tooltip"
                                         data-bs-placement="top" title="Kembali Ke Halaman Awal"></i></a>
                             </div>
@@ -42,13 +41,13 @@
                         <div class="timeline">
                             <!-- timeline time label -->
                             <div class="time-label">
-                                <span class="bg-warning">Timeline</span>
+                                <span class="bg-danger">Timeline</span>
                             </div>
                             <!-- /.timeline-label -->
                             @foreach ($letter->progresses as $progress)
                                 <!-- timeline item -->
                                 <div>
-                                    <i class="fas fa-envelope bg-primary"></i>
+                                    <i class="fas fa-envelope-open bg-primary"></i>
                                     <div class="timeline-item">
                                         <span class="time"><i class="fas fa-clock"></i>
                                             {{ date_format($progress->created_at, 'd-M-Y') }}</span>
@@ -61,9 +60,9 @@
                                 </div>
                                 <!-- END timeline item -->
                             @endforeach                            
-                            <div>
+                            {{-- <div>
                                 <i class="fas fa-clock bg-gray"></i>
-                            </div>
+                            </div> --}}
                         </div>
                     </div>
                 </div>

@@ -73,7 +73,7 @@
                             <div class="form-group">
                                 <div class="row">
                                     <div class="col-md-2">
-                                        <label for="perselisihan">Jenis perselisihan</label>
+                                        <label for="perselisihan">Jenis Perselisihan</label>
                                     </div>
                                     <div class="col-md-10">
                                         <div class="form-check form-check-inline">

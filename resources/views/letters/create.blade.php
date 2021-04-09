@@ -88,7 +88,7 @@
                                     <div class="form-group">
                                         <div class="row">
                                             <div class="col-md-4">
-                                                <label for="perselisihan">Jenis perselisihan</label>
+                                                <label for="perselisihan">Jenis Perselisihan</label>
                                             </div>
                                             <div class="col-md-8">
                                                 <div class="form-check form-check-inline">

@@ -62,6 +62,17 @@
                             <div class="form-group">
                                 <div class="row">
                                     <div class="col-md-2">
+                                        <label for="tgl_terima">Tanggal Terima</label>
+                                    </div>
+                                    <div class="col-md-10">
+                                        <input type="date" class="form-control" id="tgl_terima" name="tgl_terima"
+                                            value="{{ old('tgl_terima', $letter->tgl_terima) }}" autocomplete="off">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <div class="row">
+                                    <div class="col-md-2">
                                         <label for="asal">Asal Surat</label>
                                     </div>
                                     <div class="col-md-10">
@@ -71,6 +82,33 @@
                                 </div>
                             </div>
                             <div class="form-group">
+                                <div class="row">
+                                    <div class="col-md-2">
+                                        <label for="seksi">Jenis seksi</label>
+                                    </div>
+                                    <div class="col-md-10">
+                                        <div class="form-check form-check-inline">
+                                            <input class="form-check-input" type="radio" name="seksi"
+                                                id="inlineRadio1" value="KHI"
+                                                {{ $letter->seksi == 'KHI' ? 'checked' : '' }}>
+                                            <label class="form-check-label" for="inlineRadio1">KHI</label>
+                                        </div>
+                                        <div class="form-check form-check-inline">
+                                            <input class="form-check-input" type="radio" name="seksi"
+                                                id="inlineRadio2" value="Syaker"
+                                                {{ $letter->seksi == 'Syaker' ? 'checked' : '' }}>
+                                            <label class="form-check-label" for="inlineRadio2">Syaker</label>
+                                        </div>
+                                        <div class="form-check form-check-inline">
+                                            <input class="form-check-input" type="radio" name="seksi"
+                                                id="inlineRadio2" value="Pengupahan"
+                                                {{ $letter->seksi == 'Pengupahan' ? 'checked' : '' }}>
+                                            <label class="form-check-label" for="inlineRadio2">Pengupahan</label>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            {{-- <div class="form-group">
                                 <div class="row">
                                     <div class="col-md-2">
                                         <label for="perselisihan">Jenis Perselisihan</label>
@@ -102,11 +140,23 @@
                                         </div>
                                     </div>
                                 </div>
+                            </div> --}}
+                            <div class="form-group">
+                                <div class="row">
+                                    <div class="col-md-2">
+                                        <label for="keterangan">Keterangan</label>
+                                    </div>
+                                    <div class="col-md-10">
+                                        <textarea type="text" class="form-control" id="keterangan" name="keterangan" autocomplete="off">
+                                            {{ old('keterangan', $letter->keterangan) }}
+                                            </textarea>
+                                    </div>
+                                </div>
                             </div>
                             <div class="form-group">
                                 <div class="row">
                                     <div class="col-md-2">
-                                        <label for="isi">Deskripsi Singkat</label>
+                                        <label for="isi">Perihal</label>
                                     </div>
                                     <div class="col-md-10">
                                         <textarea type="text" class="form-control" id="isi" name="isi" autocomplete="off">

@@ -39,9 +39,10 @@
                                     <tr>
                                         <th>No</th>
                                         <th>No. Surat</th>
-                                        <th>Tanggal Surat</th>
+                                        <th>Tanggal Terima</th>
                                         <th>Asal</th>
-                                        <th>Perselisihan</th>
+                                        <th>Perihal</th>
+                                        {{-- <th>Perselisihan</th> --}}
                                         <th>Status</th>
                                         <th>Actions</th>
                                     </tr>
@@ -51,9 +52,10 @@
                                         <tr>
                                             <td class="text-center">{{ $loop->iteration }}</td>
                                             <td>{{ $item->no_surat }}</td>
-                                            <td>{{ $item->tgl_surat }}</td>
+                                            <td>{{ $item->tgl_terima }}</td>
                                             <td>{{ $item->asal }}</td>
-                                            <td>{{ $item->perselisihan }}</td>
+                                            <td>{{ $item->isi }}</td>
+                                            {{-- <td>{{ $item->perselisihan }}</td> --}}
                                             <td>{{ $item->progresses[sizeof($item->progresses) - 1]['status'] }}</td>
                                             <td class="text-center">
                                                 <a href="{{ route('letter.detail', $item) }}"

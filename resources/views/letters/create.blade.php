@@ -72,6 +72,22 @@
                                     <div class="form-group">
                                         <div class="row">
                                             <div class="col-md-4">
+                                                <label for="tgl_terima">Tanggal Terima</label>
+                                            </div>
+                                            <div class="col-md-8">
+                                                <input type="date" class="form-control" id="tgl_terima" name="tgl_terima"
+                                                    value="{{ old('tgl_terima') }}" autocomplete="off">
+                                                @error('tgl_terima')
+                                                    <div class="text-danger mt-2">
+                                                        Tanggal Terima wajib diisi
+                                                    </div>
+                                                @enderror
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <div class="row">
+                                            <div class="col-md-4">
                                                 <label for="asal">Asal Surat</label>
                                             </div>
                                             <div class="col-md-8">
@@ -86,6 +102,35 @@
                                         </div>
                                     </div>
                                     <div class="form-group">
+                                        <div class="row">
+                                            <div class="col-md-4">
+                                                <label for="seksi">Seksi</label>
+                                            </div>
+                                            <div class="col-md-8">
+                                                <div class="form-check form-check-inline">
+                                                    <input class="form-check-input" type="radio" name="seksi"
+                                                        id="inlineRadio1" value="KHI">
+                                                    <label class="form-check-label" for="inlineRadio1">KHI</label>
+                                                </div>
+                                                <div class="form-check form-check-inline">
+                                                    <input class="form-check-input" type="radio" name="seksi"
+                                                        id="inlineRadio2" value="Syaker">
+                                                    <label class="form-check-label" for="inlineRadio2">Syaker</label>
+                                                </div>
+                                                <div class="form-check form-check-inline">
+                                                    <input class="form-check-input" type="radio" name="seksi"
+                                                        id="inlineRadio2" value="Pengupahan">
+                                                    <label class="form-check-label" for="inlineRadio2">Pengupahan</label>
+                                                </div>
+                                                @error('seksi')
+                                                    <div class="text-danger mt-2">
+                                                        Seksi wajib diisi
+                                                    </div>
+                                                @enderror
+                                            </div>
+                                        </div>
+                                    </div>
+                                    {{-- <div class="form-group">
                                         <div class="row">
                                             <div class="col-md-4">
                                                 <label for="perselisihan">Jenis Perselisihan</label>
@@ -118,11 +163,28 @@
                                                 @enderror
                                             </div>
                                         </div>
+                                    </div> --}}
+                                    <div class="form-group">
+                                        <div class="row">
+                                            <div class="col-md-4">
+                                                <label for="keterangan">Keterangan</label>
+                                            </div>
+                                            <div class="col-md-8">
+                                                <textarea type="text" class="form-control" id="keterangan" name="keterangan"
+                                                    value="{{ old('keterangan') }}" autocomplete="off">
+                                                                                    </textarea>
+                                                @error('keterangan')
+                                                    <div class="text-danger mt-2">
+                                                        Keterangan wajib diisi
+                                                    </div>
+                                                @enderror
+                                            </div>
+                                        </div>
                                     </div>
                                     <div class="form-group">
                                         <div class="row">
                                             <div class="col-md-4">
-                                                <label for="isi">Deskripsi Singkat</label>
+                                                <label for="isi">Perihal</label>
                                             </div>
                                             <div class="col-md-8">
                                                 <textarea type="text" class="form-control" id="isi" name="isi"
@@ -130,7 +192,7 @@
                                                                                     </textarea>
                                                 @error('isi')
                                                     <div class="text-danger mt-2">
-                                                        Deskripsi Singkat wajib diisi
+                                                        Perihal wajib diisi
                                                     </div>
                                                 @enderror
                                             </div>

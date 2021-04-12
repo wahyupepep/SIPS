@@ -11,8 +11,10 @@ class Letter extends Model
     protected $fillable = [
         'no_surat',
         'tgl_surat',
+        'tgl_terima',
         'asal',
-        'perselisihan',
+        'seksi',
+        'keterangan',
         'isi',
         'image',
         'user_id'

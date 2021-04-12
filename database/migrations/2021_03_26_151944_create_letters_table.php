@@ -17,8 +17,11 @@ class CreateLettersTable extends Migration
             $table->id();
             $table->string('no_surat')->unique();
             $table->date('tgl_surat');
+            $table->date('tgl_terima');
             $table->string('asal');
-            $table->enum('perselisihan',['Hak','Kepentingan','PHK','SP/SB']);
+            // $table->enum('perselisihan',['Hak','Kepentingan','PHK','SP/SB']);
+            $table->enum('seksi',['KHI','Syaker','Pengupahan']);
+            $table->string('keterangan');
             $table->string('isi');
             $table->string('image')->nullable();
             $table->foreignId('user_id')->unsigned();

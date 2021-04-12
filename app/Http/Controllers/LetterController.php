@@ -48,8 +48,10 @@ class LetterController extends Controller
         $this->validate($request, [
             'no_surat' => 'required',
             'tgl_surat' => 'required',
+            'tgl_terima' => 'required',
             'asal' => 'required',
-            'perselisihan' => 'required',
+            'seksi' => 'required',
+            'keterangan' => 'required',
             'isi' => 'required',
             'image' => request('image') ? 'nullable|mimes:pdf,jpg,jpeg' : '',
         ]);
@@ -70,8 +72,10 @@ class LetterController extends Controller
         $letter = Letter::create([
             'no_surat' => $request->no_surat,
             'tgl_surat' => $request->tgl_surat,
+            'tgl_terima' => $request->tgl_terima,
             'asal' => $request->asal,
-            'perselisihan' => $request->perselisihan,
+            'seksi' => $request->seksi,
+            'keterangan' => $request->keterangan,
             'isi' => $request->isi,
             'image' => $store,
             'user_id' => $user
@@ -126,8 +130,10 @@ class LetterController extends Controller
         $this->validate($request, [
             'no_surat' => 'required',
             'tgl_surat' => 'required',
+            'tgl_terima' => 'required',
             'asal' => 'required',
-            'perselisihan' => 'required',
+            'seksi' => 'required',
+            'keterangan' => 'required',
             'isi' => 'required',
             'image' => request('image') ? 'nullable|mimes:pdf,jpg,jpeg' : '',
         ]);
@@ -143,8 +149,10 @@ class LetterController extends Controller
         $letter->update([
             'no_surat' => request('no_surat'),
             'tgl_surat' => request('tgl_surat'),
+            'tgl_terima' => request('tgl_terima'),
             'asal' => request('asal'),
-            'perselisihan' => request('perselisihan'),
+            'seksi' => request('seksi'),
+            'keterangan' => request('keterangan'),
             'isi' => request('isi'),
             'image' => $image,
         ]);

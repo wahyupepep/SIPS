@@ -48,17 +48,32 @@
                                                 value="{{ $letter->tgl_surat }}">
                                         </div>
                                         <div class="col-md-12">
+                                            <label class="form-label">Tanggal Terima</label>
+                                            <input type="text" class="form-control-plaintext border-0" readonly
+                                                value="{{ $letter->tgl_terima }}">
+                                        </div>
+                                        <div class="col-md-12">
                                             <label class="form-label">Asal</label>
                                             <input type="text" class="form-control-plaintext border-0" readonly
                                                 value="{{ $letter->asal }}">
                                         </div>
-                                        <div class="col-md-12">
+                                        {{-- <div class="col-md-12">
                                             <label class="form-label">Perselisihan</label>
                                             <input type="text" class="form-control-plaintext border-0" readonly
                                                 value="{{ $letter->perselisihan }}">
+                                        </div> --}}
+                                        <div class="col-md-12">
+                                            <label class="form-label">Seksi</label>
+                                            <input type="text" class="form-control-plaintext border-0" readonly
+                                                value="{{ $letter->seksi }}">
                                         </div>
                                         <div class="col-md-12">
-                                            <label class="form-label">Deskripsi Singkat</label>
+                                            <label class="form-label">Keterangan</label>
+                                            <input type="text" class="form-control-plaintext border-0" readonly
+                                                value="{{ $letter->keterangan }}">
+                                        </div>
+                                        <div class="col-md-12">
+                                            <label class="form-label">Perihal</label>
                                             <input type="text" class="form-control-plaintext border-0" readonly
                                                 value="{{ $letter->isi }}">
                                         </div>

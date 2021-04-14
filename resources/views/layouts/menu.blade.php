@@ -8,7 +8,13 @@
 <li class="nav-item">
     <a href="{{ route('letter') }}" class="nav-link">
         <i class="nav-icon fas fa-envelope-open-text"></i>
-        <p>Surat</p>
+        <p>Surat Masuk</p>
+    </a>
+</li>
+<li class="nav-item">
+    <a href="{{ route('out') }}" class="nav-link">
+        <i class="nav-icon fas fa-envelope"></i>
+        <p>Surat Keluar</p>
     </a>
 </li>
 {{-- <li class="nav-item">

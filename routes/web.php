@@ -1,7 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\{LetterController,HomeController,MediatorController,ProgressController};
+use App\Http\Controllers\{LetterController,HomeController,MediatorController,ProgressController,OutController};
 use Illuminate\Support\Facades\Auth;
 
 /*
@@ -35,6 +35,21 @@ Route::group([
     Route::put('/{id}', [LetterController::class, 'update'])->name('.update');
     Route::delete('/{id}', [LetterController::class, 'destroy'])->name('.delete');
     Route::get('/{id}/add-status', [LetterController::class, 'addStatus'])->name('.add-status');
+});
+
+Route::group([
+    'prefix' => 'out',
+    'as' => 'out',
+    'midleware' => 'auth'
+], function () {
+    Route::get('/', [OutController::class, 'index']);      
+    Route::get('/create', [OutController::class, 'create'])->name('.create');
+    Route::post('/store', [OutController::class, 'store'])->name('.store');
+    Route::get('/detail/{detail:id}', [OutController::class, 'show'])->name('.detail');
+    Route::get('/edit/{edit:id}', [OutController::class, 'edit'])->name('.edit');
+    Route::put('/{id}', [OutController::class, 'update'])->name('.update');
+    Route::delete('/{id}', [OutController::class, 'destroy'])->name('.delete');
+
 });
 
 Route::group([

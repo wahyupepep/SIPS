@@ -35,7 +35,7 @@
                             </div>
                         </div>
                     </div>
-                    <div class="card-body" style="background-color: aliceblue">
+                    <div class="card-body" style="background-color: rgb(230, 242, 253)">
                         <div class="list-group">
                             @foreach ($letters as $letter)
                                 <a href="{{ route('track.detail', $letter->id) }}"
@@ -46,7 +46,8 @@
                                         <small>{{ $letter->name }}</small>
                                     </div>
                                     <p class="mb-1">{{ $letter->asal }}</p>
-                                    <small>{{ $letter->isi }}</small>
+                                    <small>{{ $letter->isi }}</small> <br>
+                                    <small>{{ $letter->seksi }}</small>
                                 </a>
                             @endforeach
                         </div>     

@@ -34,67 +34,107 @@
                     </div>
                     <div class="card-body">
                         <div class="row">
-                            <div class="col-md-4">
+                            <div class="col-md-7">
                                 <div class="form-group">
                                     <div class="row">
-                                        <div class="col-md-12">
+                                        <div class="col-md-4">
                                             <label class="form-label">No. Surat</label>
+                                        </div>
+                                        <div class="col-md-8">
                                             <input type="text" class="form-control-plaintext border-0" readonly
                                                 value="{{ $letter->no_surat }}">
                                         </div>
-                                        <div class="col-md-12">
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <div class="row">
+                                        <div class="col-md-4">
                                             <label class="form-label">Tanggal Surat</label>
+                                        </div>
+                                        <div class="col-md-8">
                                             <input type="text" class="form-control-plaintext border-0" readonly
                                                 value="{{ $letter->tgl_surat }}">
                                         </div>
-                                        <div class="col-md-12">
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <div class="row">
+                                        <div class="col-md-4">
                                             <label class="form-label">Tanggal Terima</label>
+                                        </div>
+                                        <div class="col-md-8">
                                             <input type="text" class="form-control-plaintext border-0" readonly
                                                 value="{{ $letter->tgl_terima }}">
                                         </div>
-                                        <div class="col-md-12">
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <div class="row">
+                                        <div class="col-md-4">
                                             <label class="form-label">Asal</label>
+                                        </div>
+                                        <div class="col-md-8">
                                             <input type="text" class="form-control-plaintext border-0" readonly
                                                 value="{{ $letter->asal }}">
                                         </div>
-                                        {{-- <div class="col-md-12">
-                                            <label class="form-label">Perselisihan</label>
-                                            <input type="text" class="form-control-plaintext border-0" readonly
-                                                value="{{ $letter->perselisihan }}">
-                                        </div> --}}
-                                        <div class="col-md-12">
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <div class="row">
+                                        <div class="col-md-4">
                                             <label class="form-label">Seksi</label>
+                                        </div>
+                                        <div class="col-md-8">
                                             <input type="text" class="form-control-plaintext border-0" readonly
                                                 value="{{ $letter->seksi }}">
                                         </div>
-                                        <div class="col-md-12">
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <div class="row">
+                                        <div class="col-md-4">
                                             <label class="form-label">Perihal</label>
+                                        </div>
+                                        <div class="col-md-8">
                                             <input type="text" class="form-control-plaintext border-0" readonly
                                                 value="{{ $letter->isi }}">
                                         </div>
-                                        <div class="col-md-12">
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <div class="row">
+                                        <div class="col-md-4">
                                             <label class="form-label">Keterangan</label>
+                                        </div>
+                                        <div class="col-md-8">
                                             <input type="text" class="form-control-plaintext border-0" readonly
                                                 value="{{ $letter->keterangan }}">
                                         </div>
                                     </div>
                                 </div>
+                                <div class="form-group">
+                                    <div class="row">
+                                        <div class="col-md-12">
+                                            <label class="form-label">File</label></br>
+                                            <img class="w-100" src="{{ asset('storage/' . $letter->image) }}"
+                                                alt="tidak ada file yang diupload">
+                                        </div>
+                                    </div>
+                                </div>
                                 <div class="row justify-content-center">
                                     <a href="{{ route('letter.edit', $letter) }}"
-                                    class="btn bg-gradient-warning btn-sm"><i class="fas fa-pen mr-1"></i>Ubah</a>
-                                    <form action="{{ route('letter.delete', $letter) }}" method="POST" onsubmit="return confirm('Yakin Ingin Menghapus Data Ini?')">
+                                        class="btn bg-gradient-warning btn-sm"><i class="fas fa-pen mr-1"></i>Ubah</a>
+                                    <form action="{{ route('letter.delete', $letter) }}" method="POST"
+                                        onsubmit="return confirm('Yakin Ingin Menghapus Data Ini?')">
                                         @method('delete')
                                         @csrf
                                         <button class="btn bg-gradient-danger btn-sm ml-1"><i
-                                        class="fas fa-trash mr-1"></i>Hapus</button>
+                                                class="fas fa-trash mr-1"></i>Hapus</button>
                                     </form>
                                     {{-- <a href="{{ route('letter.delete', $letter) }}"
-                                    class="btn bg-gradient-danger btn-sm ml-1"><i
-                                    class="fas fa-trash mr-1"></i>Hapus</a> --}}
+                                                    class="btn bg-gradient-danger btn-sm ml-1"><i
+                                                    class="fas fa-trash mr-1"></i>Hapus</a> --}}
                                 </div>
-                            </div>
-                            <div class="col-md-3">
-                                <img class="w-100" src="{{ asset('storage/' . $letter->image) }}" alt="tidak ada gambar">
                             </div>
                             <div class="col-md-5">
                                 <h4 class="text-center mb-3">Tahapan Pengerjaan Surat</h4>
@@ -106,10 +146,9 @@
                                                 <div class="font-weight-bold">{{ $progress['status'] }}</div>
                                                 {{ $progress['keterangan'] }}
                                             </div>
-                                            @if ((sizeof($letter->progresses)-1) <= $key)
-                                                <a href="{{ route('progress.show', $progress) }}"
-                                                    class="btn btn-info btn-sm" data-bs-toggle="tooltip"
-                                                    data-bs-placement="top" title="Ubah Keterangan">
+                                            @if (sizeof($letter->progresses) - 1 <= $key)
+                                                <a href="{{ route('progress.show', $progress) }}" class="btn btn-info btn-sm"
+                                                    data-bs-toggle="tooltip" data-bs-placement="top" title="Ubah Keterangan">
                                                     <i class="fas fa-edit"></i>
                                                 </a>
                                             @endif
@@ -120,11 +159,13 @@
                                     class="btn btn-primary mt-3 btn-block">Perbarui Status</a>
                             </div>
                         </div>
-                    </div>
-                    <!-- /.card-body -->
+                    </div>                    
                 </div>
             </div>
+            <!-- /.card-body -->
         </div>
+    </div>
+    </div>
     </div>
     </div>
 @endsection

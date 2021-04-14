@@ -15,7 +15,7 @@ class Progress extends Model
         'keterangan'
     ];
 
-    public $status = ['Pelajari','Tindak Lanjuti'];
+    public $status = ['Pelajari','Tindak Lanjuti', 'Selesai'];
 
     public function letter()
     {

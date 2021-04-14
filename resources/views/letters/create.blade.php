@@ -167,23 +167,6 @@
                                     <div class="form-group">
                                         <div class="row">
                                             <div class="col-md-4">
-                                                <label for="keterangan">Keterangan</label>
-                                            </div>
-                                            <div class="col-md-8">
-                                                <textarea type="text" class="form-control" id="keterangan" name="keterangan"
-                                                    value="{{ old('keterangan') }}" autocomplete="off">
-                                                                                    </textarea>
-                                                @error('keterangan')
-                                                    <div class="text-danger mt-2">
-                                                        Keterangan wajib diisi
-                                                    </div>
-                                                @enderror
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="form-group">
-                                        <div class="row">
-                                            <div class="col-md-4">
                                                 <label for="isi">Perihal</label>
                                             </div>
                                             <div class="col-md-8">
@@ -193,6 +176,23 @@
                                                 @error('isi')
                                                     <div class="text-danger mt-2">
                                                         Perihal wajib diisi
+                                                    </div>
+                                                @enderror
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <div class="row">
+                                            <div class="col-md-4">
+                                                <label for="keterangan">Keterangan</label>
+                                            </div>
+                                            <div class="col-md-8">
+                                                <textarea type="text" class="form-control" id="keterangan" name="keterangan"
+                                                    value="{{ old('keterangan') }}" autocomplete="off">
+                                                                                    </textarea>
+                                                @error('keterangan')
+                                                    <div class="text-danger mt-2">
+                                                        Keterangan wajib diisi
                                                     </div>
                                                 @enderror
                                             </div>

@@ -28,33 +28,35 @@
                         </div>
                     </div>
                     <div class="card-body">
-                       <form action="{{route('progress.store', $id)}}" method="POST">
-                           @csrf
-                           <div class="form-group">
-                            <div class="row">
-                                <div class="col-md-2">
-                                    <label for="status">Progress</label>
-                                </div>
-                                <div class="col-md-10">
-                                    <input type="text" name="status" value="{{ $status }}" class="form-control" readonly>                 
-                                </div>
-                            </div>
-                        </div>
-                           <div class="form-group">
-                            <div class="row">
-                                <div class="col-md-2">
-                                    <label for="asal">Keterangan</label>
-                                </div>
-                                <div class="col-md-10">
-                                    <textarea class="form-control" name="keterangan" id="keterangan" cols="30" rows="10"></textarea>                             
+                        <form action="{{ route('progress.store', $id) }}" method="POST">
+                            @csrf
+                            <div class="form-group">
+                                <div class="row">
+                                    <div class="col-md-2">
+                                        <label for="status">Tahapan Pengerjaan</label>
+                                    </div>
+                                    <div class="col-md-10">
+                                        <input type="text" name="status" value="{{ $status }}" class="form-control"
+                                            readonly>
+                                    </div>
                                 </div>
                             </div>
-                        </div>
-                        <div class="d-flex justify-content-center">
-                            <button type="submit" class="btn btn-success mt-3 "><i
-                                class="fas fa-fw fa-check mr-1"></i>Simpan</button>
-                        </div>
-                       </form>
+                            <div class="form-group">
+                                <div class="row">
+                                    <div class="col-md-2">
+                                        <label for="asal">Keterangan</label>
+                                    </div>
+                                    <div class="col-md-10">
+                                        <textarea class="form-control" name="keterangan" id="keterangan" cols="30"
+                                            rows="10"></textarea>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="d-flex justify-content-center">
+                                <button type="submit" class="btn btn-success mt-3 "><i
+                                        class="fas fa-fw fa-check mr-1"></i>Simpan</button>
+                            </div>
+                        </form>
                     </div>
                     <!-- /.card-body -->
                 </div>

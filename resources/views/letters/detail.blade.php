@@ -68,14 +68,14 @@
                                                 value="{{ $letter->seksi }}">
                                         </div>
                                         <div class="col-md-12">
-                                            <label class="form-label">Keterangan</label>
-                                            <input type="text" class="form-control-plaintext border-0" readonly
-                                                value="{{ $letter->keterangan }}">
-                                        </div>
-                                        <div class="col-md-12">
                                             <label class="form-label">Perihal</label>
                                             <input type="text" class="form-control-plaintext border-0" readonly
                                                 value="{{ $letter->isi }}">
+                                        </div>
+                                        <div class="col-md-12">
+                                            <label class="form-label">Keterangan</label>
+                                            <input type="text" class="form-control-plaintext border-0" readonly
+                                                value="{{ $letter->keterangan }}">
                                         </div>
                                     </div>
                                 </div>
@@ -97,6 +97,7 @@
                                 <img class="w-100" src="{{ asset('storage/' . $letter->image) }}" alt="tidak ada gambar">
                             </div>
                             <div class="col-md-5">
+                                <h4 class="text-center mb-3">Tahapan Pengerjaan Surat</h4>
                                 <ul class="list-group">
                                     @foreach ($letter->progresses as $key => $progress)
                                         <li

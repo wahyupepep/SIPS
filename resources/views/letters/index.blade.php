@@ -86,9 +86,6 @@
                                 </tbody>
                             </table>
                         </div>
-                        <div class="float-right mt-3">
-                            {{-- {{ $letters->links() }} --}}
-                        </div>
                     </div>
                     <!-- /.card-body -->
                 </div>

@@ -24,7 +24,7 @@
                     <div class="card-header">
                         <div class="row">
                             <div class="col-md-6 col-6 my-auto">
-                                <h3 class="card-title">Informasi Surat</h3>
+                                <h3 class="card-title">Informasi Surat Masuk</h3>
                             </div>
                             <div class="col-md-6 col-6">
                                 <a href="{{ route('letter') }}" class="btn btn-danger btn-sm float-right"><i

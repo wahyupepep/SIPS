@@ -8,7 +8,7 @@
             <div class="col-md-6">
                 <ol class="breadcrumb float-sm-right">
                     <li class="breadcrumb-item"><a href="{{ route('home') }}">Home</a></li>
-                    <li class="breadcrumb-item active">Surat</li>
+                    <li class="breadcrumb-item active">Surat Masuk</li>
                     <li class="breadcrumb-item active">detail</li>
                 </ol>
             </div>
@@ -24,7 +24,7 @@
                     <div class="card-header">
                         <div class="row">
                             <div class="col-md-6 col-6 my-auto">
-                                <h3 class="card-title">Detail Surat</h3>
+                                <h3 class="card-title">Detail Surat Masuk</h3>
                             </div>
                             <div class="col-md-6 col-6">
                                 <a href="{{ route('letter') }}" class="btn btn-danger btn-sm float-right"><i

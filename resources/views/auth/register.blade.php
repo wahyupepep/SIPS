@@ -18,6 +18,8 @@
 <body class="hold-transition register-page" style="background-color: aliceblue">
 <div class="register-box">
     <div class="register-logo font-weight-bold" style="font-size: 45px">
+        <img src=" {{ asset('image/logo_HI.jpg') }} " alt="AdminLTE Logo"
+        class="brand-image img-circle elevation-3" width="70" height="70"><br>
         <a href="{{ url('/home') }}"><b>{{ config('app.name') }}</b></a>
     </div>
 

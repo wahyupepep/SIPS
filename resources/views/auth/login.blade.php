@@ -20,6 +20,8 @@
 <body class="hold-transition login-page" style="background-color: aliceblue">
     <div class="login-box">
         <div class="login-logo font-weight-bold" style="font-size: 45px">
+            <img src=" {{ asset('image/logo_HI.jpg') }} " alt="AdminLTE Logo"
+            class="brand-image img-circle elevation-3" width="70" height="70"><br>
             <a href="{{ url('/home') }}"><b>{{ config('app.name') }}</b></a>
             <h4>Sistem Informasi Pelacak Surat</h4>
         </div>

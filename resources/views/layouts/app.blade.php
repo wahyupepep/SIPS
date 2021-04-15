@@ -63,7 +63,6 @@
 
     </div>
 
-    {{-- <script src="{{ mix('js/app.js') }}" defer></script> --}}
     <script src={{ asset('template/plugins/jquery/jquery.min.js') }}></script>
     <script src={{ asset('template/plugins/jquery-ui/jquery-ui.min.js') }}></script>
     <script>
@@ -75,6 +74,7 @@
     <script src={{ asset('template/plugins/datatables-bs4/js/dataTables.bootstrap4.min.js') }}></script>
     <script src={{ asset('template/plugins/datatables-responsive/js/dataTables.responsive.min.js') }}></script>
     <script src={{ asset('template/plugins/datatables-responsive/js/responsive.bootstrap4.min.js') }}></script>
+    {{-- <script src="{{ mix('js/app.js') }}" defer></script> --}}
     <script>
         $(document).ready(function() {
             $('#example2').DataTable({
@@ -87,7 +87,6 @@
                 "responsive": true,
             });
         });
-
     </script>
 </body>
 

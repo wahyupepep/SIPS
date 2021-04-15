@@ -108,6 +108,35 @@
                                             </div>
                                             <div class="col-md-8">
                                                 <div class="form-check form-check-inline">
+                                                    <input class="form-check-input" type="checkbox" name="seksi"
+                                                        value="KHI">
+                                                    <label class="form-check-label" for="inlineCheckbox1">KHI</label>
+                                                </div>
+                                                <div class="form-check form-check-inline">
+                                                    <input class="form-check-input" type="checkbox" name="seksi"
+                                                        value="Syaker">
+                                                    <label class="form-check-label" for="inlineCheckbox1">Syaker</label>
+                                                </div>
+                                                <div class="form-check form-check-inline">
+                                                    <input class="form-check-input" type="checkbox" name="seksi"
+                                                        value="Pengupahan">
+                                                    <label class="form-check-label" for="inlineCheckbox1">Pengupahan</label>
+                                                </div>
+                                                <div class="form-check form-check-inline">
+                                                    <input class="form-check-input" type="checkbox" name="seksi"
+                                                        value="Pengaduan">
+                                                    <label class="form-check-label" for="inlineCheckbox1">Pengaduan</label>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    {{-- <div class="form-group">
+                                        <div class="row">
+                                            <div class="col-md-4">
+                                                <label for="seksi">Seksi</label>
+                                            </div>
+                                            <div class="col-md-8">
+                                                <div class="form-check form-check-inline">
                                                     <input class="form-check-input" type="radio" name="seksi"
                                                         id="inlineRadio1" value="KHI">
                                                     <label class="form-check-label" for="inlineRadio1">KHI</label>
@@ -129,7 +158,7 @@
                                                 @enderror
                                             </div>
                                         </div>
-                                    </div>
+                                    </div> --}}
                                     {{-- <div class="form-group">
                                         <div class="row">
                                             <div class="col-md-4">
@@ -172,7 +201,7 @@
                                             <div class="col-md-8">
                                                 <textarea type="text" class="form-control" id="isi" name="isi"
                                                     value="{{ old('isi') }}" autocomplete="off">
-                                                                                    </textarea>
+                                                                                                </textarea>
                                                 @error('isi')
                                                     <div class="text-danger mt-2">
                                                         Perihal wajib diisi
@@ -189,7 +218,7 @@
                                             <div class="col-md-8">
                                                 <textarea type="text" class="form-control" id="keterangan" name="keterangan"
                                                     value="{{ old('keterangan') }}" autocomplete="off">
-                                                                                    </textarea>
+                                                                                                </textarea>
                                                 @error('keterangan')
                                                     <div class="text-danger mt-2">
                                                         Keterangan wajib diisi
@@ -215,7 +244,7 @@
                             </div>
                             <div class="d-flex justify-content-center">
                                 <button type="submit" class="btn btn-success mt-3"><i
-                                    class="fas fa-fw fa-check mr-1"></i>Simpan</button>
+                                        class="fas fa-fw fa-check mr-1"></i>Simpan</button>
                             </div>
                         </form>
                     </div>

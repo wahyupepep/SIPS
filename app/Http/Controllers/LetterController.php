@@ -53,7 +53,7 @@ class LetterController extends Controller
             'seksi' => 'required',
             'keterangan' => 'required',
             'isi' => 'required',
-            'image' => request('image') ? 'nullable|mimes:pdf,jpg,jpeg' : '',
+            'image' => request('image') ? 'nullable|mimes:pdf' : '',
         ]);
 
         $user = Auth::user()->id;

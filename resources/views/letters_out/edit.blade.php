@@ -35,7 +35,7 @@
                     <div class="card-body">
                         <form action="{{ route('out.update', $out) }}" method="POST" enctype="multipart/form-data">
                             <div class="row">
-                                <div class="col-md-12">
+                                <div class="col-md-6">
                                     @csrf
                                     @method('put')
                                     <div class="form-group">
@@ -70,12 +70,13 @@
                                             </div>
                                         </div>
                                     </div>
+                                </div>
+                                <div class="col-md-6">
                                     <div class="form-group">
                                         <div class="row">
-                                            <div class="col-md-3">
+                                            <div class="col-md-12">
                                                 <label for="hasil">Upload File</label>
-                                            </div>
-                                            <div class="col-md-9">
+                                            
                                                 @if ($out->hasil)
                                                     <iframe class="w-100" src="{{ asset('storage/' . $out->hasil) }}"
                                                         height="600">
@@ -89,11 +90,6 @@
                                         </div>
                                     </div>
                                 </div>
-                                {{-- <div class="col-md-1">
-                                </div>
-                                <div class="col-md-6">
-                                    
-                                </div> --}}
                             </div>
                             <div class="d-flex justify-content-center">
                                 <button type="submit" class="btn btn-success mt-3"><i

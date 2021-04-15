@@ -115,9 +115,10 @@
                                 <div class="form-group">
                                     <div class="row">
                                         <div class="col-md-12">
-                                            <label class="form-label">File</label></br>
-                                            <img class="w-100" src="{{ asset('storage/' . $letter->image) }}"
-                                                alt="tidak ada file yang diupload">
+                                            <iframe class="w-100" src="{{ asset('storage/' . $letter->image) }}"
+                                                height="500">
+                                                This browser does not support PDFs.
+                                            </iframe>
                                         </div>
                                     </div>
                                 </div>

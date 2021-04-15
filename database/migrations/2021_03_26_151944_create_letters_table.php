@@ -20,7 +20,7 @@ class CreateLettersTable extends Migration
             $table->date('tgl_terima');
             $table->string('asal');
             // $table->enum('perselisihan',['Hak','Kepentingan','PHK','SP/SB']);
-            $table->enum('seksi',['KHI','Syaker','Pengupahan']);
+            $table->enum('seksi',['KHI','Syaker','Pengupahan','Pengaduan']);
             $table->string('keterangan');
             $table->string('isi');
             $table->string('image')->nullable();

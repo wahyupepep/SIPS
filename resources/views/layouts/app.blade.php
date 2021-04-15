@@ -11,7 +11,11 @@
         crossorigin="anonymous" />
 
     <link href="{{ mix('css/app.css') }}" rel="stylesheet">
-    <link rel="stylesheet" href={{ asset('plugins/datatables-bs4/css/dataTables.bootstrap4.min.css') }}>
+
+    <link rel="stylesheet" href={{ asset('template/plugins/datatables-bs4/css/dataTables.bootstrap4.min.css') }}>
+    <link rel="stylesheet" href={{ asset('template/plugins/datatables-responsive/css/responsive.bootstrap4.min.css') }}>
+    <link rel="stylesheet" href={{ asset('template/plugins/datatables-buttons/css/buttons.bootstrap4.min.css') }}>
+    <link rel="stylesheet" href={{ asset('template/dist/css/adminlte.min.css') }}>
 </head>
 
 <body class="hold-transition sidebar-mini layout-fixed">
@@ -60,12 +64,17 @@
     </div>
 
     {{-- <script src="{{ mix('js/app.js') }}" defer></script> --}}
-    <script src={{ asset('plugins/jquery/jquery.min.js') }}></script>
-    <script src={{ asset('plugins/bootstrap/js/bootstrap.bundle.min.js') }}></script>
-    <script src={{ asset('plugins/datatables/jquery.dataTables.min.js') }}></script>
-    <script src={{ asset('plugins/datatables-bs4/js/dataTables.bootstrap4.min.js') }}></script>
-    <script src={{ asset('plugins/datatables-responsive/js/dataTables.responsive.min.js') }}></script>
-    <script src={{ asset('plugins/datatables-responsive/js/responsive.bootstrap4.min.js') }}></script>
+    <script src={{ asset('template/plugins/jquery/jquery.min.js') }}></script>
+    <script src={{ asset('template/plugins/jquery-ui/jquery-ui.min.js') }}></script>
+    <script>
+        $.widget.bridge('uibutton', $.ui.button)
+
+    </script>
+    <script src={{ asset('template/plugins/bootstrap/js/bootstrap.bundle.min.js') }}></script>
+    <script src={{ asset('template/plugins/datatables/jquery.dataTables.min.js') }}></script>
+    <script src={{ asset('template/plugins/datatables-bs4/js/dataTables.bootstrap4.min.js') }}></script>
+    <script src={{ asset('template/plugins/datatables-responsive/js/dataTables.responsive.min.js') }}></script>
+    <script src={{ asset('template/plugins/datatables-responsive/js/responsive.bootstrap4.min.js') }}></script>
     <script>
         $(document).ready(function() {
             $('#example2').DataTable({
